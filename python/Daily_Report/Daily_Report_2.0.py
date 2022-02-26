@@ -185,7 +185,7 @@ def Search_Unreported():
         except:
             driver.find_element_by_xpath('//*[text() = "首页"]').click()
             driver.find_element_by_xpath('//*[@id="lnkReportHistory"]').click()
-            send_message()
+            #send_message()
     if Unreported_Flag == 0:
         print("您没有未填报的记录！\n")
 
