@@ -2,4 +2,4 @@
 # -*- coding: GBK -*-
 import os
 # with open()
-print(os.getcwd())
+print(os.path.exists('python'))
