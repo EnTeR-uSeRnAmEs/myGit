@@ -1,4 +1,4 @@
-# -*- coding=utf-8 -*-
+# -*- coding=GBK -*-
 import msvcrt,sys
 def pwd_input():    
     chars = []   
@@ -20,7 +20,9 @@ def pwd_input():
             msvcrt.putch('*'.encode(encoding='utf-8')) # œ‘ æŒ™–«∫≈  
     return (''.join(chars) )  
   
-print("Please input your password:")
+print("Please input your password:",end='')
+# print("Please input your password:")
+# print('≤‚ ‘£∫', end='')
 pwd = pwd_input()  
 print("\nyour password is:{0}".format(pwd))
-sys.exit()
+input()
