@@ -68,10 +68,10 @@ def login():
     print("正在打开Chrome浏览器...\n")   
     global driver
     try:
-        option=webdriver.ChromeOptions()
-        option.add_argument('headless')
-        driver = webdriver.Chrome(chrome_options=option)
-        # driver = webdriver.Chrome()
+        # option=webdriver.ChromeOptions()
+        # option.add_argument('headless')
+        # driver = webdriver.Chrome(chrome_options=option)
+        driver = webdriver.Chrome()
         print("已成功打开Chrome浏览器\n")
     except:
         print("未能打开Chrome浏览器，请检查当前文件夹是否有chromedriver.exe\n")

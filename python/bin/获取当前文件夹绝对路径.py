@@ -1,6 +1,10 @@
 import os
 
 def cd2curdir():
+    try:
+        import os
+    except ImportError:
+        pass
     os.chdir(os.path.split(os.path.abspath(__file__))[0])
 
 
