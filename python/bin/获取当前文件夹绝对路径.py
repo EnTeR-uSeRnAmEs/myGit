@@ -1,11 +1,11 @@
-import os
+import os,sys
 
 def cd2curdir():
     try:
         import os
     except ImportError:
         pass
-    os.chdir(os.path.split(os.path.abspath(__file__))[0])
+    os.chdir(os.path.split(os.path.realpath(os.path.dirname(sys.argv[0]))))
 
 
 

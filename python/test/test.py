@@ -1,27 +1,3 @@
-#!/usr/bin/python
-# -*- coding: GBK -*-
-import msvcrt, sys, os
-def get_password():
-    print('password: ', end='', flush=True)
-    li = []
-    while 1:
-        ch = msvcrt.getch()
-        #»Ø³µ
-        if ch == b'\r':
-            msvcrt.putch(b'\n')
-            return b''.join(li).decode()
-        #ÍË¸ñ
-        elif ch == b'\x08':
-            if li:
-                li.pop()
-                msvcrt.putch(b'\b')
-                msvcrt.putch(b' ')
-                msvcrt.putch(b'\b')
-        #Esc
-        elif ch == b'\x1b':
-            break
-        else:
-            li.append(ch)
-            msvcrt.putch(b'*')
-
+import os,sys
+print(os.path.realpath(os.path.dirname(sys.argv[0])))
 os.system('pause')
