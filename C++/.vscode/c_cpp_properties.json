@@ -1,8 +1,8 @@
 {
   "configurations": [
     {
-      "compilerPath": "C:\\MinGW\\bin\\g++.exe",
-      "cppStandard": "gnu++14",
+      "compilerPath": "D:\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
+      "cppStandard": "gnu++11",
       "includePath": [
         "${workspaceFolder}/**"
       ],

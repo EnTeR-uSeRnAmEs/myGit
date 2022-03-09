@@ -1,7 +1,7 @@
 {
   "options": {
     "env": {
-      "Path": "C:\\MinGW\\bin;${env:Path}"
+      "Path": "D:\\Dev-Cpp\\MinGW64\\bin;${env:Path}"
     },
     "shell": {
       "args": [
@@ -13,7 +13,7 @@
   "tasks": [
     {
       "args": [
-        "-std=gnu++14",
+        "-std=gnu++11",
         "-Wall",
         "-Wextra",
         "-g",
@@ -21,7 +21,7 @@
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
-      "command": "C:\\MinGW\\bin\\g++.exe",
+      "command": "D:\\Dev-Cpp\\MinGW64\\bin\\g++.exe",
       "group": {
         "isDefault": true,
         "kind": "build"
@@ -45,7 +45,7 @@
         "ByPass",
         "-NoProfile",
         "-File",
-        "C:\\MinGW\\bin\\pause-console.ps1",
+        "D:\\Dev-Cpp\\MinGW64\\bin\\pause-console.ps1",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
       "command": "START",
@@ -68,7 +68,7 @@
         "ByPass",
         "-NoProfile",
         "-File",
-        "C:\\MinGW\\bin\\check-ascii.ps1",
+        "D:\\Dev-Cpp\\MinGW64\\bin\\check-ascii.ps1",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
       "command": "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",

@@ -127,9 +127,6 @@ def isNetOK(testserver=('www.baidu.com', 443)):
 
 try:
     from selenium import webdriver
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.chrome.options import Options
-
 except:
     i = ''
     while i != 'Y' or 'N':
@@ -141,8 +138,6 @@ except:
                 os.system(f'pip install selenium')
                 sleep(10)
                 from selenium import webdriver
-                from selenium.webdriver.common.by import By
-                from selenium.webdriver.chrome.options import Options
             except:
                 print("出现未知错误，未能成功安装selenium模块，请您在python.exe中使用'pip install selenium'命令手动为其安装selenium模块后重新运行此程序\n")
                 sleep(20)
@@ -180,10 +175,9 @@ def login():
     print("正在打开Chrome浏览器...\n")
     global driver
     try:
-        chrome_options = Options()
-        chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])#禁止打印日志
-        chrome_options.add_argument('--headless')
-        driver = webdriver.Chrome(options=chrome_options)
+        option = webdriver.ChromeOptions()
+        option.add_argument('headless')
+        driver = webdriver.Chrome(chrome_options=option)
         # driver = webdriver.Chrome()
         print("已成功打开Chrome浏览器\n")
     except:
@@ -194,21 +188,21 @@ def login():
     driver.get('https://selfreport.shu.edu.cn')
     sleep(0.1)
     print("正在填写账号密码...\n")
-    driver.find_element(By.XPATH, '//*[@id="username"]').send_keys(ID)
-    driver.find_element(By.XPATH, '//*[@id="password"]').send_keys(Password)
+    driver.find_element_by_xpath('//*[@id="username"]').send_keys(ID)
+    driver.find_element_by_xpath('//*[@id="password"]').send_keys(Password)
     sleep(0.1)
     try:
-        driver.find_element(By.XPATH, '//button[text() = "登录"]').click()
+        driver.find_element_by_xpath('//button[text() = "登录"]').click()
     except:
         pass
     print("登陆成功！\n")
     sleep(0.1)
     try:
-        driver.find_element(By.XPATH, '//*[@id="lnkReportHistory"]').click()
+        driver.find_element_by_xpath('//*[@id="lnkReportHistory"]').click()
     except:
-        driver.find_element(By.XPATH, 
+        driver.find_element_by_xpath(
             '//button[text() = "确认已阅读"]').click()
-        driver.find_element(By.XPATH, '//*[@id="lnkReportHistory"]').click()
+        driver.find_element_by_xpath('//*[@id="lnkReportHistory"]').click()
 
 
 def Search_Unreported():
@@ -217,7 +211,7 @@ def Search_Unreported():
     for t in range(1, 30):
         i = 30 - t
         try:
-            temp = driver.find_element(By.XPATH, 
+            temp = driver.find_element_by_xpath(
                 '//*[@id="Panel1_DataList1"]/ul/li['+str(i)+']')
             temp_str = temp.text
             str_len = len(temp_str)
@@ -232,25 +226,25 @@ def Search_Unreported():
                         answer = ""
                         print("已定位到未填报项目，正在进行填报...\n")
                         try:
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//*[@id="Panel1_DataList1"]/ul/li[' + str(i) + ']').click()
-                            # driver.find_element(By.XPATH, '//*[text() = "我承诺，以下报送内容真实有效并可用于学校管理需要！"]').click()
+                            # driver.find_element_by_xpath('//*[text() = "我承诺，以下报送内容真实有效并可用于学校管理需要！"]').click()
                         except:
                             pass
                         try:
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//a[text() = "答案提示点击这里"]').click()
                             sleep(1)
-                            answer = driver.find_element(By.XPATH, 
+                            answer = driver.find_element_by_xpath(
                                 '//td/div[contains(text(), "参考答案")]').text
                             tmp = ""
                             for k in answer:
                                 if (k >= "a" and k <= "z") or (k >= "A" and k <= "Z"):
                                     tmp += k
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//*[text() = "确定"]').click()
                             for k in tmp:
-                                driver.find_element(By.XPATH, 
+                                driver.find_element_by_xpath(
                                     '//*[contains(text(), "' + str(k) + '.")]').click()
                         except:
                             # send_message()
@@ -280,50 +274,50 @@ def Search_Unreported():
                                 pass
                         except:
                             pass
-                        # driver.find_element(By.XPATH, '//*[@id="p1_ChengNuo-inputEl"]').click()
+                        # driver.find_element_by_xpath('//*[@id="p1_ChengNuo-inputEl"]').click()
                         try:
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//*[text() = "我承诺，以下报送内容真实有效并可用于学校管理需要！"]').click()
                         except:
                             pass
                         sleep(0.2)
                         try:
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//*[text() = "' + choice1 + '"]').click()
                             sleep(1)
                         except:
-                            # driver.find_element(By.XPATH, '//*[text() = "在上海（校内）"]').click()
+                            # driver.find_element_by_xpath('//*[text() = "在上海（校内）"]').click()
                             pass
                         try:
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//*[text() = "' + choice2 + '"]').click()
                             sleep(0.2)
                         except:
                             pass
                         try:
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//*[text() = "' + choice3 + '"]').click()
                             sleep(0.2)
                         except:
                             pass
                         try:
-                            driver.find_element(By.XPATH, 
+                            driver.find_element_by_xpath(
                                 '//*[text() = "' + choice4 + '"]').click()
                             sleep(0.2)
                         except:
                             pass
-                        driver.find_element(By.XPATH, 
+                        driver.find_element_by_xpath(
                             '//*[text() = "确定"]').click()
                         sleep(0.2)
-                        driver.find_element(By.XPATH, 
+                        driver.find_element_by_xpath(
                             '//a[text() = "确定"]').click()
                         sleep(0.2)
-                        driver.find_element(By.XPATH, 
+                        driver.find_element_by_xpath(
                             '//*[@id="lnkReportHistory"]').click()
                         sleep(0.2)
         except:
-            driver.find_element(By.XPATH, '//*[text() = "首页"]').click()
-            driver.find_element(By.XPATH, '//*[@id="lnkReportHistory"]').click()
+            driver.find_element_by_xpath('//*[text() = "首页"]').click()
+            driver.find_element_by_xpath('//*[@id="lnkReportHistory"]').click()
             send_message()
     if Unreported_Flag == 0:
         print("您没有未填报的记录！\n")
