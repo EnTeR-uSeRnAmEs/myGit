@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-int result = 1, count = 1;
+int result = 1, counts = 1;
 int gcd(int a, int b)
 {
     if (a % b == 0)
@@ -16,14 +16,14 @@ int gcd_bb(int a, int b)
     int result_tmp = gcd(a, b);
     if (result_tmp != 1)
     {
-        if (count > b)
+        if (counts > b)
         {
             return result;
         }
         else
         {
             a = a / result_tmp;
-            count++;
+            counts++;
             result *= result_tmp;
             gcd_bb(a, b);
         }
@@ -40,7 +40,7 @@ int main()
     while (cin >> a >> b)
     {
         result = 1;
-        count = 1;
+        counts = 1;
         cout << gcd_bb(a, b) << endl;
     }
     return 0;

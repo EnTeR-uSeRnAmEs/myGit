@@ -1,13 +1,13 @@
 {
   "configurations": [
     {
-      "cStandard": "c11",
-      "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+      "compilerPath": "C:\\mingw64\\bin\\g++.exe",
+      "cppStandard": "c++20",
       "includePath": [
         "${workspaceFolder}/**"
       ],
       "intelliSenseMode": "windows-gcc-x64",
-      "name": "gcc"
+      "name": "Win32"
     }
   ],
   "version": 4

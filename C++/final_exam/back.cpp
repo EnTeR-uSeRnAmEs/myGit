@@ -1,11 +1,11 @@
 /******************************************************************************************************************   
- *  ÎÄ¼şÃû³Æ: ÆóÒµ¹ÜÀíÏµÍ³   
- *  ´´½¨ÈÕÆÚ: 2021.10.28
- *  ×÷Õß: ³ÂÅµ
+ *  æ–‡ä»¶åç§°: ä¼ä¸šç®¡ç†ç³»ç»Ÿ   
+ *  åˆ›å»ºæ—¥æœŸ: 2021.10.28
+ *  ä½œè€…: é™ˆè¯º
  *   
- *  ĞŞ¸ÄÈÕÆÚ: 
- *  ×÷Õß: 
- *  ËµÃ÷: 
+ *  ä¿®æ”¹æ—¥æœŸ: 
+ *  ä½œè€…: 
+ *  è¯´æ˜: 
  *****************************************************************************************************************/
 
 /****************************************************<include>****************************************************/
@@ -54,7 +54,7 @@ void Save_Things_List(ListNode* pHead);
 /***************************************************<fun void end>**************************************************/
 
 /***************************************************<fun def begin>*************************************************/
-void Create_Menu(ListNode* &pHead)//½¨Á¢×ÀÃæ
+void Create_Menu(ListNode* &pHead)//å»ºç«‹æ¡Œé¢
 {
     system("cls");
     if (pHead != NULL) 
@@ -63,16 +63,16 @@ void Create_Menu(ListNode* &pHead)//½¨Á¢×ÀÃæ
         pHead = NULL;
     }
     cout << "       ********************************************************************************************" << endl
-         << "       *                                    ÆóÒµ¹ÜÀíÏµÍ³                                          *" << endl
+         << "       *                                    ä¼ä¸šç®¡ç†ç³»ç»Ÿ                                          *" << endl
          << "       ********************************************************************************************" << endl
          << endl
          << endl
          << endl
          << endl
-         << "ÇëÊäÈëĞèÒª²Ù×÷µÄÎÄ¼şĞòºÅ:" << endl
-         << "1.²éÑ¯Ô±¹¤ĞÅÏ¢" << endl
-         << "2.²éÑ¯ÊÂÎñĞÅÏ¢" << endl
-         << "0.ÍË³öÏµÍ³"
+         << "è¯·è¾“å…¥éœ€è¦æ“ä½œçš„æ–‡ä»¶åºå·:" << endl
+         << "1.æŸ¥è¯¢å‘˜å·¥ä¿¡æ¯" << endl
+         << "2.æŸ¥è¯¢äº‹åŠ¡ä¿¡æ¯" << endl
+         << "0.é€€å‡ºç³»ç»Ÿ"
          << endl
          << endl
          << endl;
@@ -88,38 +88,38 @@ void Create_Menu(ListNode* &pHead)//½¨Á¢×ÀÃæ
         cout << endl
              << endl
              << endl
-             << "       ****************************************Ğ»Ğ»Ê¹ÓÃ£¡****************************************";
+             << "       ****************************************è°¢è°¢ä½¿ç”¨ï¼****************************************";
         Sleep(5000);
         return;
     }
     else
     {
-        cout << "ÇëÊäÈëÕıÈ·µÄĞòºÅ£¡" << endl;
+        cout << "è¯·è¾“å…¥æ­£ç¡®çš„åºå·ï¼" << endl;
         Sleep(1000);
         Create_Menu(pHead);
         return;
     }
 }
 
-void Create_Menu_Employee(ListNode* pHead)//½¨Á¢Ô±¹¤×ÀÃæ
+void Create_Menu_Employee(ListNode* pHead)//å»ºç«‹å‘˜å·¥æ¡Œé¢
 {
     ListNode* pThings = NULL;
     if (pHead == NULL) Create_Employee_List(pHead);
     while(1)
     {
         system("cls");
-        cout << "Ô±¹¤ĞÅÏ¢²Ù×÷:" << endl
+        cout << "å‘˜å·¥ä¿¡æ¯æ“ä½œ:" << endl
             << endl
             << endl
-            << "ÇëÊäÈëÇëÊäÈëĞèÒª²Ù×÷µÄÈÎÎñĞòºÅ:" << endl
-            << "1.²éÑ¯Ô±¹¤ĞÅÏ¢" << endl
-            << "2.É¾³ıÔ±¹¤ĞÅÏ¢" << endl
-            << "3.Ôö¼ÓÔ±¹¤ĞÅÏ¢" << endl
-            << "4.ĞŞ¸ÄÔ±¹¤ĞÅÏ¢" << endl
-            << "5.Ô±¹¤ÅÅĞò" << endl
-            << "6.¹ÜÀí²ã¼¶Ë³Ğò²éÑ¯" << endl
-            << "7.±£´æÔ±¹¤ĞÅÏ¢" << endl
-            << "0.·µ»ØÉÏÒ»Ò³" << endl
+            << "è¯·è¾“å…¥è¯·è¾“å…¥éœ€è¦æ“ä½œçš„ä»»åŠ¡åºå·:" << endl
+            << "1.æŸ¥è¯¢å‘˜å·¥ä¿¡æ¯" << endl
+            << "2.åˆ é™¤å‘˜å·¥ä¿¡æ¯" << endl
+            << "3.å¢åŠ å‘˜å·¥ä¿¡æ¯" << endl
+            << "4.ä¿®æ”¹å‘˜å·¥ä¿¡æ¯" << endl
+            << "5.å‘˜å·¥æ’åº" << endl
+            << "6.ç®¡ç†å±‚çº§é¡ºåºæŸ¥è¯¢" << endl
+            << "7.ä¿å­˜å‘˜å·¥ä¿¡æ¯" << endl
+            << "0.è¿”å›ä¸Šä¸€é¡µ" << endl
             << endl
             << endl
             << endl;
@@ -133,20 +133,20 @@ void Create_Menu_Employee(ListNode* pHead)//½¨Á¢Ô±¹¤×ÀÃæ
                 if (pHead == NULL) 
                 {
                     cin.ignore();
-                    cout << "µ±Ç°Ã»ÓĞÔ±¹¤£¡" << endl;
+                    cout << "å½“å‰æ²¡æœ‰å‘˜å·¥ï¼" << endl;
                     getchar();
                     break;
                 }
-                cout << "ÇëÊäÈëĞèÒª²éÑ¯µÄÔ±¹¤±àºÅ,ĞÕÃû»ò²¿ÃÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+                cout << "è¯·è¾“å…¥éœ€è¦æŸ¥è¯¢çš„å‘˜å·¥ç¼–å·,å§“åæˆ–éƒ¨é—¨(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
                 while (cin >> id)
                 {
                     if (id == "-1") break;
                     else if (id == "0") Display_List(pHead);
                     else 
                     {
-                        if (Search_Employee_List(pHead, id) == NULL) cout << "²éÎŞ´ËÈË£¡" << endl;
+                        if (Search_Employee_List(pHead, id) == NULL) cout << "æŸ¥æ— æ­¤äººï¼" << endl;
                     }
-                    cout << "\n\n\nÇëÊäÈëĞèÒª²éÑ¯µÄÔ±¹¤±àºÅ,ĞÕÃû»ò²¿ÃÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+                    cout << "\n\n\nè¯·è¾“å…¥éœ€è¦æŸ¥è¯¢çš„å‘˜å·¥ç¼–å·,å§“åæˆ–éƒ¨é—¨(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
                 }
                 break;
             case 2:
@@ -155,11 +155,11 @@ void Create_Menu_Employee(ListNode* pHead)//½¨Á¢Ô±¹¤×ÀÃæ
                 if (pHead == NULL) 
                 {
                     cin.ignore();
-                    cout << "µ±Ç°Ã»ÓĞÔ±¹¤£¡" << endl;
+                    cout << "å½“å‰æ²¡æœ‰å‘˜å·¥ï¼" << endl;
                     getchar();
                     break;
                 }
-                cout << "ÇëÊäÈëĞèÒªÉ¾³ıµÄÔ±¹¤±àºÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+                cout << "è¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å‘˜å·¥ç¼–å·(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
                 while (cin >> id)
                 {
                     if (id == "-1") break;
@@ -170,7 +170,7 @@ void Create_Menu_Employee(ListNode* pHead)//½¨Á¢Ô±¹¤×ÀÃæ
                         // Display_List(pThings);
                         flag = 0;
                     }
-                    cout << "\n\n\nÇëÊäÈëĞèÒªÉ¾³ıµÄÔ±¹¤±àºÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+                    cout << "\n\n\nè¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å‘˜å·¥ç¼–å·(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
                 }
                 
                 break;
@@ -187,12 +187,12 @@ void Create_Menu_Employee(ListNode* pHead)//½¨Á¢Ô±¹¤×ÀÃæ
                 break;
             case 6:
                 system("cls");
-                cout << "ÇëÊäÈëĞèÒª²éÑ¯µÄÔ±¹¤±àºÅ(ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+                cout << "è¯·è¾“å…¥éœ€è¦æŸ¥è¯¢çš„å‘˜å·¥ç¼–å·(è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
                 while (cin >> id)
                 {
                     if (id == "-1") break;
                     else Eployee_Leaderid(pHead, id);
-                    cout << "\n\n\nÇëÊäÈëĞèÒª²éÑ¯µÄÔ±¹¤±àºÅ(ÊäÈë-1»ò·µ»ØÉÏÒ»½çÃæ): ";
+                    cout << "\n\n\nè¯·è¾“å…¥éœ€è¦æŸ¥è¯¢çš„å‘˜å·¥ç¼–å·(è¾“å…¥-1æˆ–è¿”å›ä¸Šä¸€ç•Œé¢): ";
                 }
                 break;
             case 7:
@@ -203,7 +203,7 @@ void Create_Menu_Employee(ListNode* pHead)//½¨Á¢Ô±¹¤×ÀÃæ
             case 0:
                 if (!flag) 
                 {
-                    cout << "ÊÇ·ñĞèÒª±£´æ£¿(Y/n) ";
+                    cout << "æ˜¯å¦éœ€è¦ä¿å­˜ï¼Ÿ(Y/n) ";
                     char tmp;
                     cin >> tmp;
                     if (tmp == 'Y' || tmp == 'y') 
@@ -215,27 +215,27 @@ void Create_Menu_Employee(ListNode* pHead)//½¨Á¢Ô±¹¤×ÀÃæ
                 Create_Menu(pHead);
                 return;
             default:
-                cout << "ÇëÊäÈëÕıÈ·µÄĞòºÅ£¡" << endl;
+                cout << "è¯·è¾“å…¥æ­£ç¡®çš„åºå·ï¼" << endl;
                 Sleep(1000);
         }
     }
     return;
 }
 
-void Create_Menu_Things(ListNode* pHead)//½¨Á¢ÊÂÎñ×ÀÃæ
+void Create_Menu_Things(ListNode* pHead)//å»ºç«‹äº‹åŠ¡æ¡Œé¢
 {
     system("cls");
     if (pHead == NULL) Create_Things_List(pHead);
     // cout << pHead << endl;
-    cout << "Ô±¹¤ÊÂÎñ²Ù×÷:" << endl
+    cout << "å‘˜å·¥äº‹åŠ¡æ“ä½œ:" << endl
          << endl
          << endl
-         << "ÇëÊäÈëÇëÊäÈëĞèÒª²Ù×÷µÄÈÎÎñĞòºÅ:" << endl
-         << "1.²éÑ¯ÊÂÎñĞÅÏ¢" << endl
-         << "2.Ôö¼ÓÊÂÎñĞÅÏ¢" << endl
-         << "3.É¾³ıÊÂÎñĞÅÏ¢" << endl
-         << "4.±£´æÊÂÎñĞÅÏ¢" << endl
-         << "0.·µ»ØÉÏÒ»Ò³" << endl
+         << "è¯·è¾“å…¥è¯·è¾“å…¥éœ€è¦æ“ä½œçš„ä»»åŠ¡åºå·:" << endl
+         << "1.æŸ¥è¯¢äº‹åŠ¡ä¿¡æ¯" << endl
+         << "2.å¢åŠ äº‹åŠ¡ä¿¡æ¯" << endl
+         << "3.åˆ é™¤äº‹åŠ¡ä¿¡æ¯" << endl
+         << "4.ä¿å­˜äº‹åŠ¡ä¿¡æ¯" << endl
+         << "0.è¿”å›ä¸Šä¸€é¡µ" << endl
          << endl
          << endl
          << endl;
@@ -249,20 +249,20 @@ void Create_Menu_Things(ListNode* pHead)//½¨Á¢ÊÂÎñ×ÀÃæ
         if (pHead == NULL) 
         {
             cin.ignore();
-            cout << "µ±Ç°Ã»ÓĞÊÂÎñ£¡" << endl;
+            cout << "å½“å‰æ²¡æœ‰äº‹åŠ¡ï¼" << endl;
             getchar();
             break;
         }
-        cout << "ÇëÊäÈëĞèÒª²éÑ¯µÄÊÂÎñ±àºÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+        cout << "è¯·è¾“å…¥éœ€è¦æŸ¥è¯¢çš„äº‹åŠ¡ç¼–å·(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
         while (cin >> id)
         {
             if (id == "-1") break;
             else if (id == "0") Display_List(pHead);
             else 
             {
-                if (Search_Things_List(pHead, id) == NULL) cout << "²éÎŞ´ËÊÂ£¡" << endl;
+                if (Search_Things_List(pHead, id) == NULL) cout << "æŸ¥æ— æ­¤äº‹ï¼" << endl;
             }
-            cout << "\n\n\nÇëÊäÈëĞèÒª²éÑ¯µÄÊÂÎñ±àºÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+            cout << "\n\n\nè¯·è¾“å…¥éœ€è¦æŸ¥è¯¢çš„äº‹åŠ¡ç¼–å·(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
         }
         flag = 0;
         break;
@@ -275,11 +275,11 @@ void Create_Menu_Things(ListNode* pHead)//½¨Á¢ÊÂÎñ×ÀÃæ
         if (pHead == NULL) 
         {
             cin.ignore();
-            cout << "µ±Ç°Ã»ÓĞÔ±¹¤£¡" << endl;
+            cout << "å½“å‰æ²¡æœ‰å‘˜å·¥ï¼" << endl;
             getchar();
             break;
         }
-        cout << "ÇëÊäÈëĞèÒªÉ¾³ıµÄÔ±¹¤±àºÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+        cout << "è¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å‘˜å·¥ç¼–å·(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
         while (cin >> id)
         {
             if (id == "-1") break;
@@ -287,7 +287,7 @@ void Create_Menu_Things(ListNode* pHead)//½¨Á¢ÊÂÎñ×ÀÃæ
             {
                 Delete_List_Things(pHead, id);
             }
-            cout << "\n\n\nÇëÊäÈëĞèÒªÉ¾³ıµÄÔ±¹¤ÊÂÎñ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+            cout << "\n\n\nè¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å‘˜å·¥äº‹åŠ¡(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
         }
         break;
         break;
@@ -297,7 +297,7 @@ void Create_Menu_Things(ListNode* pHead)//½¨Á¢ÊÂÎñ×ÀÃæ
     case 0:
         if (!flag) 
         {
-            cout << "ÊÇ·ñĞèÒª±£´æ£¿(Y/n) ";
+            cout << "æ˜¯å¦éœ€è¦ä¿å­˜ï¼Ÿ(Y/n) ";
             char tmp;
             cin >> tmp;
             if (tmp == 'Y' || tmp == 'y') Save_Things_List(pHead);
@@ -305,7 +305,7 @@ void Create_Menu_Things(ListNode* pHead)//½¨Á¢ÊÂÎñ×ÀÃæ
         Create_Menu(pHead);
         return;
     default:
-        cout << "ÇëÊäÈëÕıÈ·µÄĞòºÅ£¡" << endl;
+        cout << "è¯·è¾“å…¥æ­£ç¡®çš„åºå·ï¼" << endl;
         Sleep(1000);
         Create_Menu_Things(pHead);
         return;
@@ -314,7 +314,7 @@ void Create_Menu_Things(ListNode* pHead)//½¨Á¢ÊÂÎñ×ÀÃæ
     return;
 }
 
-void Create_Employee_List(ListNode* &pHead)//´´Á¢Á´±í
+void Create_Employee_List(ListNode* &pHead)//åˆ›ç«‹é“¾è¡¨
 {
     ifstream Employee_File("employee.txt", ios::binary);
     pHead = new ListNode;
@@ -343,7 +343,7 @@ void Create_Employee_List(ListNode* &pHead)//´´Á¢Á´±í
     Employee_File.close();
 }
 
-void Create_Things_List(ListNode* &pHead)//´´Á¢ÊÂÎñÁ´±í
+void Create_Things_List(ListNode* &pHead)//åˆ›ç«‹äº‹åŠ¡é“¾è¡¨
 {
     ifstream Things_File("things.txt", ios::binary);
     pHead = new ListNode;
@@ -370,7 +370,7 @@ void Create_Things_List(ListNode* &pHead)//´´Á¢ÊÂÎñÁ´±í
     Things_File.close();
 }
 
-void Destory_List(ListNode* pHead)//É¾³ıÁ´±í
+void Destory_List(ListNode* pHead)//åˆ é™¤é“¾è¡¨
 {
     assert(pHead != NULL);
     ListNode *pNext = pHead->next;
@@ -385,7 +385,7 @@ void Destory_List(ListNode* pHead)//É¾³ıÁ´±í
     return;
 }
 
-// ListNode* Insert_List(ListNode* pHead)//²åÈëÁ´±í£¬·µ»Ø²åÈëµÄµØÖ·
+// ListNode* Insert_List(ListNode* pHead)//æ’å…¥é“¾è¡¨ï¼Œè¿”å›æ’å…¥çš„åœ°å€
 // {
 //     ListNode* pInsert = new ListNode;
 //     pInsert -> next = pHead -> next;
@@ -393,7 +393,7 @@ void Destory_List(ListNode* pHead)//É¾³ıÁ´±í
 //     return pHead -> next;
 // }
 
-void Delete_List(ListNode* pHead)//É¾³ıpHead
+void Delete_List(ListNode* pHead)//åˆ é™¤pHead
 {
     if (pHead -> next != NULL)
     {
@@ -413,7 +413,7 @@ void Delete_List(ListNode* pHead)//É¾³ıpHead
     return;
 }
 
-ListNode* Search_Employee_List(ListNode* pHead, string id)//ËÑË÷Ô±¹¤ĞòºÅ
+ListNode* Search_Employee_List(ListNode* pHead, string id)//æœç´¢å‘˜å·¥åºå·
 {
     system("cls");
     int flag = 1;
@@ -467,7 +467,7 @@ void Display_List(ListNode* pHead)
     return;
 }
 
-void Delete_List_Employee(ListNode* &pHead, string id)//É¾³ıÔ±¹¤ĞòºÅ
+void Delete_List_Employee(ListNode* &pHead, string id)//åˆ é™¤å‘˜å·¥åºå·
 {
     system("cls");
     ListNode* ptmp = pHead;
@@ -475,26 +475,26 @@ void Delete_List_Employee(ListNode* &pHead, string id)//É¾³ıÔ±¹¤ĞòºÅ
     else 
     {
         ptmp = Search_Employee_List(ptmp, id);
-        if (ptmp == NULL) cout << "²éÎŞ´ËÈË£¡";
+        if (ptmp == NULL) cout << "æŸ¥æ— æ­¤äººï¼";
         else if (ptmp == pHead) 
         {
             pHead = ptmp -> next;
             delete ptmp;
-            cout << "ÒÑÉ¾³ı¸ÃÔ±¹¤ĞÅÏ¢£¡\n";
+            cout << "å·²åˆ é™¤è¯¥å‘˜å·¥ä¿¡æ¯ï¼\n";
         }
         else 
         {
             Delete_List(ptmp);
-            cout << "ÒÑÉ¾³ı¸ÃÔ±¹¤ĞÅÏ¢£¡\n";
+            cout << "å·²åˆ é™¤è¯¥å‘˜å·¥ä¿¡æ¯ï¼\n";
         }
-        // cout << "\n\n\nÇëÊäÈëĞèÒªÉ¾³ıµÄÔ±¹¤±àºÅ(ÊäÈë0ÒÔÕ¹Ê¾È«²¿, ÊäÈë-1·µ»ØÉÏÒ»½çÃæ): ";
+        // cout << "\n\n\nè¯·è¾“å…¥éœ€è¦åˆ é™¤çš„å‘˜å·¥ç¼–å·(è¾“å…¥0ä»¥å±•ç¤ºå…¨éƒ¨, è¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢): ";
     }
 }
 
 void Append_List_Employer(ListNode* pHead)
 {
     system("cls");
-    cout << "ÇëÊäÈëĞÂÔöÔ±¹¤µÄĞÅÏ¢: (±àºÅ ĞÕÃû ²¿ÃÅ Ğ½Ë® Ö±ÊôÁìµ¼±àºÅ£¨¿ÉÑ¡£©)" << endl;
+    cout << "è¯·è¾“å…¥æ–°å¢å‘˜å·¥çš„ä¿¡æ¯: (ç¼–å· å§“å éƒ¨é—¨ è–ªæ°´ ç›´å±é¢†å¯¼ç¼–å·ï¼ˆå¯é€‰ï¼‰)" << endl;
     string str;
     cin.ignore();
     while (getline(cin, str))
@@ -510,10 +510,10 @@ void Append_List_Employer(ListNode* pHead)
         {
             if (ptmp -> id == tmp_id)
             {
-                cout << "ÒÑ´æÔÚ±àºÅÎª" << tmp_id << "µÄÔ±¹¤£¬ÇëÖØĞÂÊäÈë£¡\n";
+                cout << "å·²å­˜åœ¨ç¼–å·ä¸º" << tmp_id << "çš„å‘˜å·¥ï¼Œè¯·é‡æ–°è¾“å…¥ï¼\n";
                 Sleep(2000);
                 system("cls");
-                cout << "ÇëÊäÈëĞÂÔöÔ±¹¤µÄĞÅÏ¢: (±àºÅ ĞÕÃû ²¿ÃÅ Ğ½Ë® Ö±ÊôÁìµ¼±àºÅ£¨¿ÉÑ¡£©)" << endl;
+                cout << "è¯·è¾“å…¥æ–°å¢å‘˜å·¥çš„ä¿¡æ¯: (ç¼–å· å§“å éƒ¨é—¨ è–ªæ°´ ç›´å±é¢†å¯¼ç¼–å·ï¼ˆå¯é€‰ï¼‰)" << endl;
                 flag = 1;
                 break;
             }
@@ -527,20 +527,20 @@ void Append_List_Employer(ListNode* pHead)
         else tmp_leaderid = "-1";
         if (tmp_leaderid == tmp_id) 
         {
-            cout << "Áìµ¼¹ØÏµ´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
+            cout << "é¢†å¯¼å…³ç³»é”™è¯¯ï¼è¯·é‡æ–°è¾“å…¥ï¼" << endl;
             Sleep(2000);
             system("cls");
-            cout << "ÇëÊäÈëĞÂÔöÔ±¹¤µÄĞÅÏ¢: (±àºÅ ĞÕÃû ²¿ÃÅ Ğ½Ë® Ö±ÊôÁìµ¼±àºÅ£¨¿ÉÑ¡£©)" << endl;
+            cout << "è¯·è¾“å…¥æ–°å¢å‘˜å·¥çš„ä¿¡æ¯: (ç¼–å· å§“å éƒ¨é—¨ è–ªæ°´ ç›´å±é¢†å¯¼ç¼–å·ï¼ˆå¯é€‰ï¼‰)" << endl;
             continue;
         }
         // ListNode* ptmp2 = pHead;
         // if (tmp_leaderid == tmp_id || tmp_id != Eployee_Leaderid(pHead, tmp_leaderid))
         // {
         //     system("cls");
-        //     cout << "Áìµ¼¹ØÏµ´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
+        //     cout << "é¢†å¯¼å…³ç³»é”™è¯¯ï¼è¯·é‡æ–°è¾“å…¥ï¼" << endl;
         //     Sleep(2000);
         //     system("cls");
-        //     cout << "ÇëÊäÈëĞÂÔöÔ±¹¤µÄĞÅÏ¢: (±àºÅ ĞÕÃû ²¿ÃÅ Ğ½Ë® Ö±ÊôÁìµ¼±àºÅ£¨¿ÉÑ¡£©)" << endl;
+        //     cout << "è¯·è¾“å…¥æ–°å¢å‘˜å·¥çš„ä¿¡æ¯: (ç¼–å· å§“å éƒ¨é—¨ è–ªæ°´ ç›´å±é¢†å¯¼ç¼–å·ï¼ˆå¯é€‰ï¼‰)" << endl;
         //     continue;
         // }
         ListNode* pNew = new ListNode;
@@ -557,7 +557,7 @@ void Append_List_Employer(ListNode* pHead)
         if (pNew -> department != "") cout << " " << pNew -> department;
         if (pNew -> salary != -1) cout << " " << pNew -> salary;
         if (pNew -> leaderid != "") cout << " " << pNew -> leaderid;
-        cout << "\n\n\nÔö¼ÓÍê±Ï£¡\nÊäÈë-1·µ»ØÉÏÒ»½çÃæ»ò¼ÌĞøÂ¼ÈëÔ±¹¤ĞÅÏ¢(±àºÅ ĞÕÃû ²¿ÃÅ Ğ½Ë® Ö±ÊôÁìµ¼±àºÅ£¨¿ÉÑ¡£©)..." << endl;
+        cout << "\n\n\nå¢åŠ å®Œæ¯•ï¼\nè¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢æˆ–ç»§ç»­å½•å…¥å‘˜å·¥ä¿¡æ¯(ç¼–å· å§“å éƒ¨é—¨ è–ªæ°´ ç›´å±é¢†å¯¼ç¼–å·ï¼ˆå¯é€‰ï¼‰)..." << endl;
     }
 }
 
@@ -593,7 +593,7 @@ void Sort_Employee_Salary(ListNode* pHead)
             ptmp = ptmp -> next;
         }
     }
-    cout << "\n\n\nÊäÈëÈÎÒâ¼ü·µ»ØÉÏÒ»½çÃæ...";
+    cout << "\n\n\nè¾“å…¥ä»»æ„é”®è¿”å›ä¸Šä¸€ç•Œé¢...";
     getchar();
     return;    
 }
@@ -630,13 +630,13 @@ string Eployee_Leaderid(ListNode* pHead, string id)
     }
     if (pNLHead == NULL) 
     {
-        cout << "²éÎŞ´ËÈË£¡" << endl;
+        cout << "æŸ¥æ— æ­¤äººï¼" << endl;
         Sleep(1000);
     }
     else if (pNLHead -> next == NULL)
     {
         cout << pNLHead -> id << " " << pNLHead -> name << " " << pNLHead -> department << " " << pNLHead -> salary;
-        cout << "\n¸ÃÔ±¹¤Ã»ÓĞÖ±ÊôÁìµ¼£¡" << endl;
+        cout << "\nè¯¥å‘˜å·¥æ²¡æœ‰ç›´å±é¢†å¯¼ï¼" << endl;
     }
     else
     {
@@ -650,7 +650,7 @@ void Change_Employ_List(ListNode* pHead)
 {
     system("cls");
     cin.ignore();
-    cout << "ÇëÊäÈëĞèÒªĞŞ¸ÄµÄÔ±¹¤ĞòºÅ(ÊäÈë-1ÍË³ö): ";
+    cout << "è¯·è¾“å…¥éœ€è¦ä¿®æ”¹çš„å‘˜å·¥åºå·(è¾“å…¥-1é€€å‡º): ";
     string str;
     while (getline(cin, str))
     {
@@ -661,26 +661,26 @@ void Change_Employ_List(ListNode* pHead)
         ListNode* pChange = Search_Employee_List(pHead, str);
         if (pChange == NULL)
         {
-            cout << "²éÎŞ´ËÈË£¡";
+            cout << "æŸ¥æ— æ­¤äººï¼";
             Sleep(1000);
             system("cls");
-            cout << "ÇëÊäÈëĞèÒªĞŞ¸ÄµÄÔ±¹¤ĞòºÅ(ÊäÈë-1ÍË³ö): ";
+            cout << "è¯·è¾“å…¥éœ€è¦ä¿®æ”¹çš„å‘˜å·¥åºå·(è¾“å…¥-1é€€å‡º): ";
             continue;
         }
-        cout << "ÇëÊäÈëĞŞ¸ÄºóµÄÔ±¹¤Ãû×Ö: ";
+        cout << "è¯·è¾“å…¥ä¿®æ”¹åçš„å‘˜å·¥åå­—: ";
         cin >> pChange -> name;
-        cout << "ÇëÊäÈëĞŞ¸ÄºóµÄÔ±¹¤²¿ÃÅ: ";
+        cout << "è¯·è¾“å…¥ä¿®æ”¹åçš„å‘˜å·¥éƒ¨é—¨: ";
         cin >> pChange -> department;
-        cout << "ÇëÊäÈëĞŞ¸ÄºóµÄÔ±¹¤Ğ½Ë®: ";
+        cout << "è¯·è¾“å…¥ä¿®æ”¹åçš„å‘˜å·¥è–ªæ°´: ";
         cin >> pChange -> salary;
-        cout << "ÇëÊäÈëĞŞ¸ÄºóµÄÔ±¹¤Ö±ÏµÁìµ¼: ";
+        cout << "è¯·è¾“å…¥ä¿®æ”¹åçš„å‘˜å·¥ç›´ç³»é¢†å¯¼: ";
         cin >> pChange -> leaderid;
         Sleep(500);
-        cout << "\n\nĞŞ¸ÄÍê±Ï£¡";
+        cout << "\n\nä¿®æ”¹å®Œæ¯•ï¼";
         cin.ignore();
         Sleep(2000);
         system("cls");
-        cout << "ÇëÊäÈëĞèÒªĞŞ¸ÄµÄÔ±¹¤ĞòºÅ(ÊäÈë-1ÍË³ö): ";
+        cout << "è¯·è¾“å…¥éœ€è¦ä¿®æ”¹çš„å‘˜å·¥åºå·(è¾“å…¥-1é€€å‡º): ";
     }
     return;
 }
@@ -700,12 +700,12 @@ void Save_Employee_List(ListNode* pHead)
         }
         pHead = pHead -> next;
     }
-    cout << "±£´æÍê±Ï£¡" << endl;
+    cout << "ä¿å­˜å®Œæ¯•ï¼" << endl;
     Sleep(2000);
     return;
 }
 
-ListNode* Search_Things_List(ListNode* pHead, string id)//ËÑË÷ÊÂÎñĞòºÅ
+ListNode* Search_Things_List(ListNode* pHead, string id)//æœç´¢äº‹åŠ¡åºå·
 {
     system("cls");
     int flag = 0;
@@ -724,7 +724,7 @@ ListNode* Search_Things_List(ListNode* pHead, string id)//ËÑË÷ÊÂÎñĞòºÅ
     else return re;
 }
 
-void Delete_List_Things(ListNode* &pHead, string id)//É¾³ıÊÂÎñĞòºÅ
+void Delete_List_Things(ListNode* &pHead, string id)//åˆ é™¤äº‹åŠ¡åºå·
 {
     system("cls");
     ListNode* ptmp = pHead;
@@ -733,17 +733,17 @@ void Delete_List_Things(ListNode* &pHead, string id)//É¾³ıÊÂÎñĞòºÅ
     else 
     {
         ptmp = Search_Employee_List(ptmp, id);
-        if (ptmp == NULL) cout << "²éÎŞ´ËÊÂ£¡";
+        if (ptmp == NULL) cout << "æŸ¥æ— æ­¤äº‹ï¼";
         else if (ptmp == pHead) 
         {
             pHead = ptmp -> next;
             delete ptmp;
-            cout << "ÒÑÉ¾³ı¸ÃÔ±¹¤ÊÂÎñ£¡\n";
+            cout << "å·²åˆ é™¤è¯¥å‘˜å·¥äº‹åŠ¡ï¼\n";
         }
         else 
         {
             Delete_List(ptmp);
-            cout << "ÒÑÉ¾³ı¸ÃÔ±¹¤ÊÂÎñ£¡\n";
+            cout << "å·²åˆ é™¤è¯¥å‘˜å·¥äº‹åŠ¡ï¼\n";
         }
     }
 }
@@ -751,7 +751,7 @@ void Delete_List_Things(ListNode* &pHead, string id)//É¾³ıÊÂÎñĞòºÅ
 void Append_List_Things(ListNode* pHead)
 {
     system("cls");
-    cout << "ÇëÊäÈëĞÂÔöÊÂÎñµÄĞÅÏ¢: (±àºÅ ÊÂÎñ)" << endl;
+    cout << "è¯·è¾“å…¥æ–°å¢äº‹åŠ¡çš„ä¿¡æ¯: (ç¼–å· äº‹åŠ¡)" << endl;
     string str;
     cin.ignore();
     while (getline(cin, str))
@@ -765,10 +765,10 @@ void Append_List_Things(ListNode* pHead)
         if (!ss.eof()) ss >> tmp_things;
         else 
         {
-            cout << "ÇëÊäÈëÕıÈ·µÄÔ±¹¤ÊÂÎñ£¡" << endl;
+            cout << "è¯·è¾“å…¥æ­£ç¡®çš„å‘˜å·¥äº‹åŠ¡ï¼" << endl;
             Sleep(1000);
             system("cls");
-            cout << "ÇëÊäÈëĞÂÔöÊÂÎñµÄĞÅÏ¢: (±àºÅ ÊÂÎñ)" << endl;
+            cout << "è¯·è¾“å…¥æ–°å¢äº‹åŠ¡çš„ä¿¡æ¯: (ç¼–å· äº‹åŠ¡)" << endl;
             continue;
         }
         while (ptmp -> next != NULL) ptmp = ptmp -> next;
@@ -779,7 +779,7 @@ void Append_List_Things(ListNode* pHead)
         pNew -> id = tmp_id;
         pNew -> things = tmp_things;
         cout << pNew -> id << " " << pNew -> things;
-        cout << "\n\n\nÔö¼ÓÍê±Ï£¡\nÊäÈë-1·µ»ØÉÏÒ»½çÃæ»ò¼ÌĞøÂ¼ÈëÔ±¹¤ÊÂÎñ(±àºÅ ÊÂÎñ)..." << endl;
+        cout << "\n\n\nå¢åŠ å®Œæ¯•ï¼\nè¾“å…¥-1è¿”å›ä¸Šä¸€ç•Œé¢æˆ–ç»§ç»­å½•å…¥å‘˜å·¥äº‹åŠ¡(ç¼–å· äº‹åŠ¡)..." << endl;
     }
 }
 
@@ -796,7 +796,7 @@ void Save_Things_List(ListNode* pHead)
         }
         pHead = pHead -> next;
     }
-    cout << "±£´æÍê±Ï£¡" << endl;
+    cout << "ä¿å­˜å®Œæ¯•ï¼" << endl;
     Sleep(2000);
     return;
 }

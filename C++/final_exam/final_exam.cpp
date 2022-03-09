@@ -14,7 +14,7 @@
 using namespace std;
 
 /************************************************<global var start>************************************************/
-typedef struct ListNode
+struct ListNode
 {
     string id = "";//员工编号
     string name = "";//员工姓名
