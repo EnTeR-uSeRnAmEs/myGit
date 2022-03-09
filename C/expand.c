@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 int main()
 {
@@ -10,7 +11,7 @@ int main()
 	{
 		if (s[i] == '-')
 		{
-			if (s[i - 1] >= '0' && s[i - 1] <= '9' && s[i + 1] >= '0' && s[i + 1] <= '9')
+			if (s[i - 1] >= '0' && s[i - 1] <= '9' && s[i + 1] >= '0' && s[i + 1] <= '9' && s[i - 1] < s[i + 1])
 			{
 				for (; k[t] <= s[i + 1]; t++)
 				{
@@ -18,7 +19,7 @@ int main()
 					k[t]++;
 				}
 			}
-			else if (s[i - 1] >= 'a' && s[i - 1] <= 'z' && s[i + 1] >= 'a' && s[i + 1] <= 'z')
+			else if (s[i - 1] >= 'a' && s[i - 1] <= 'z' && s[i + 1] >= 'a' && s[i + 1] <= 'z' && s[i - 1] < s[i + 1])
 			{
 				for (;; t++)
 				{
@@ -28,7 +29,7 @@ int main()
 						break;
 				}
 			}
-			else if (s[i - 1] >= 'A' && s[i - 1] <= 'Z' && s[i + 1] >= 'A' && s[i + 1] <= 'Z')
+			else if (s[i - 1] >= 'A' && s[i - 1] <= 'Z' && s[i + 1] >= 'A' && s[i + 1] <= 'Z' && s[i - 1] < s[i + 1])
 			{
 				for (;; t++)
 				{
@@ -54,5 +55,6 @@ int main()
 	}
 	k[t] = '\0';
 	puts(k);
+	system("pause");
 	return 0;
 }
