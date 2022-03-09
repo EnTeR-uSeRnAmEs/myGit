@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "cStandard": "c11",
+      "cStandard": "gnu11",
       "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
       "includePath": [
         "${workspaceFolder}/**"
