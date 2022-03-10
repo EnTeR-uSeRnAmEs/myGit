@@ -1,6 +1,8 @@
 #!usr/bin/python
 #-*- coding: GBK -*-
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from time import sleep
 
 account = input('请输入学号：')
@@ -14,24 +16,28 @@ while True:
     else:
         classes.append(tmp)
 
-driver = webdriver.Chrome()
+chrome_options = Options()
+# chrome_options.add_argument('--headless')
+chrome_options.add_argument('--incognito')
+chrome_options.add_experimental_option("excludeSwitches",['enable-automation','enable-logging'])
+driver = webdriver.Chrome(options=chrome_options)
 sleep(0.5)
 driver.get('http://xk.autoisp.shu.edu.cn/')
 sleep(0.5)
 input("请输入回车以开始选课...")
 for i in classes:
-    driver.find_element_by_xpath('//*[@id = "username"]').send_keys(account)
-    driver.find_element_by_xpath('//*[@id = "password"]').send_keys(password)
-    driver.find_element_by_xpath('//button[text() = "登录"]').click()
-    driver.find_element_by_xpath('//*[@name = "rowterm"]').click()
-    driver.find_element_by_xpath('//button[@type = "submit"]').click()
-    driver.find_element_by_xpath('//*[@id = "CourseSelectionStudentFuzzyQuery"]').click()
-    driver.find_element_by_xpath('//*[@name = "CID"]').send_keys(i[0])
-    driver.find_element_by_xpath('//*[@name = "TeachNo"]').send_keys(i[1])
-    driver.find_element_by_xpath('//button[@id="QueryAction"]').click()
-    driver.find_element_by_xpath('//*[@name = "checkclass"]').click()
-    driver.find_element_by_xpath('//button[@id = "CourseCheckAction"]').click()
-    driver.find_element_by_xpath('//span[text() = "关闭"]').click()
+    driver.find_element(By.XPATH, '//*[@id = "username"]').send_keys(account)
+    driver.find_element(By.XPATH, '//*[@id = "password"]').send_keys(password)
+    driver.find_element(By.XPATH, '//button[text() = "登录"]').click()
+    driver.find_element(By.XPATH, '//*[@name = "rowterm"]').click()
+    driver.find_element(By.XPATH, '//button[@type = "submit"]').click()
+    driver.find_element(By.XPATH, '//*[@id = "CourseSelectionStudentFuzzyQuery"]').click()
+    driver.find_element(By.XPATH, '//*[@name = "CID"]').send_keys(i[0])
+    driver.find_element(By.XPATH, '//*[@name = "TeachNo"]').send_keys(i[1])
+    driver.find_element(By.XPATH, '//button[@id="QueryAction"]').click()
+    driver.find_element(By.XPATH, '//*[@name = "checkclass"]').click()
+    driver.find_element(By.XPATH, '//button[@id = "CourseCheckAction"]').click()
+    driver.find_element(By.XPATH, '//span[text() = "关闭"]').click()
 input()
 
 driver.quit()
