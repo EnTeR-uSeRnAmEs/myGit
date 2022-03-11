@@ -204,6 +204,10 @@ def login():
     print("登陆成功！\n")
     sleep(0.1)
     try:
+        driver.find_element(By.XPATH, '//*[text() = "取消"]').click()
+    except:
+        pass
+    try:
         driver.find_element(By.XPATH, '//*[@id="lnkReportHistory"]').click()
     except:
         driver.find_element(By.XPATH,
