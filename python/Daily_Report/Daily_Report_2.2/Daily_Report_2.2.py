@@ -180,7 +180,7 @@ def login():
     global driver
     try:
         chrome_options = Options()
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         chrome_options.add_argument('--incognito')
         chrome_options.add_experimental_option("excludeSwitches",['enable-automation','enable-logging'])
         driver = webdriver.Chrome(options=chrome_options)
@@ -326,7 +326,7 @@ def Search_Unreported():
                                             '//*[@id="lnkReportHistory"]').click()
                         sleep(0.2)
         except:
-            driver.find_element(By.XPATH, '//*[text() = "Ê×Ò³"]').click()
+            driver.find_element(By.XPATH, '//*[text() = "·µ»ØÊ×Ò³"]').click()
             driver.find_element(
                 By.XPATH, '//*[@id="lnkReportHistory"]').click()
             send_message()
