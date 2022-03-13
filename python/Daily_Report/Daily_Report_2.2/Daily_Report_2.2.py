@@ -211,7 +211,7 @@ def login():
         driver.find_element(By.XPATH, '//*[@id="lnkReportHistory"]').click()
     except:
         driver.find_element(By.XPATH,
-                            '//button[text() = "确认已阅读"]').click()
+                            '//*[text() = "确认已阅读"]').click()
         driver.find_element(By.XPATH, '//*[@id="lnkReportHistory"]').click()
 
 
