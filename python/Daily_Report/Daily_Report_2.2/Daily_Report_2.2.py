@@ -180,9 +180,10 @@ def login():
     global driver
     try:
         chrome_options = Options()
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         chrome_options.add_argument('--incognito')
-        chrome_options.add_experimental_option("excludeSwitches",['enable-automation','enable-logging'])
+        chrome_options.add_experimental_option(
+            "excludeSwitches", ['enable-automation', 'enable-logging'])
         driver = webdriver.Chrome(options=chrome_options)
         # driver = webdriver.Chrome()
         print("已成功打开Chrome浏览器\n")
@@ -204,7 +205,7 @@ def login():
     print("登陆成功！\n")
     sleep(0.1)
     try:
-        driver.find_element(By.XPATH, '//*[text() = "取消"]').click()
+        driver.find_element(By.XPATH, '//span[text() = "取消"]').click()
     except:
         pass
     try:
@@ -320,16 +321,30 @@ def Search_Unreported():
                                             '//*[text() = "确定"]').click()
                         sleep(0.2)
                         driver.find_element(By.XPATH,
-                                            '//a[text() = "确定"]').click()
+                                            '//span[text() = "确定"]').click()
                         sleep(0.2)
                         driver.find_element(By.XPATH,
                                             '//*[@id="lnkReportHistory"]').click()
                         sleep(0.2)
+                        try:
+                            driver.find_element(
+                                By.XPATH, '//span[text() = "取消"]').click()
+                        except:
+                            pass
+                        try:
+                            driver.find_element(
+                                By.XPATH, '//*[@id="lnkReportHistory"]').click()
+                        except:
+                            driver.find_element(By.XPATH,
+                                                '//*[text() = "确认已阅读"]').click()
         except:
-            driver.find_element(By.XPATH, '//*[text() = "返回首页"]').click()
-            driver.find_element(
-                By.XPATH, '//*[@id="lnkReportHistory"]').click()
-            send_message()
+            try:
+                send_message()
+                driver.find_element(By.XPATH, '//*[text() = "首页"]').click()
+                driver.find_element(
+                    By.XPATH, '//*[@id="lnkReportHistory"]').click()
+            except:
+                pass
     if Unreported_Flag == 0:
         print("您没有未填报的记录！\n")
 
