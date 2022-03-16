@@ -189,7 +189,7 @@ def login():
         print("已成功打开Chrome浏览器\n")
     except:
         print("未能打开Chrome浏览器，请检查当前文件夹是否有chromedriver.exe\n")
-        sleep(20)
+        sleep(5)
         exit()
     print("正在跳转健康之路网页...\n")
     driver.get('https://selfreport.shu.edu.cn')
@@ -274,13 +274,13 @@ def Search_Unreported():
                             try:
                                 driver_elements[0].send_keys(
                                     curdir() + '\\data\\健康码.png')
-                                sleep(3)
+                                sleep(1)
                             except:
                                 pass
                             try:
                                 driver_elements[1].send_keys(
                                     curdir() + '\\data\\行程码.png')
-                                sleep(3)
+                                sleep(1)
                             except:
                                 pass
                         except:
