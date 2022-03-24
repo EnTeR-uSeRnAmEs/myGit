@@ -9,7 +9,7 @@
       "internalConsoleOptions": "neverOpen",
       "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
       "name": "gcc single file debug",
-      "preLaunchTask": "gcc single file build",
+      "preLaunchTask": "check ascii",
       "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
       "request": "launch",
       "setupCommands": [

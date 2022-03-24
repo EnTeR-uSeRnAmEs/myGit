@@ -7,7 +7,7 @@
         "${workspaceFolder}/**"
       ],
       "intelliSenseMode": "windows-gcc-x64",
-      "name": "Win32"
+      "name": "gcc"
     }
   ],
   "version": 4
