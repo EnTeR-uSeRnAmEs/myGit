@@ -12,7 +12,16 @@ using namespace std;
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
-
+        string str_re = strs[0];
+        for (int i = 1; i < strs.size(); ++i){
+            for (int j = 0; j < str_re.length(); ++j){
+                if (strs[i][j] != str_re[j]){
+                    str_re = str_re.substr(0, j);
+                    break;
+                }
+            }
+        }
+        return str_re;
     }
 };
 // @lc code=end
