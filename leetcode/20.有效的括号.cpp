@@ -12,9 +12,25 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-        for (int i = 0; i < int(s.length()) / 2; ++i) {
-            
+        int len = s.length();
+        if (len % 2 == 1)
+            return false;
+        unordered_map<char,char> umap {
+            {')', '('},
+            {']', '['},
+            {'}', '{'} };
+        stack<char> stk;
+        for (int i = 0; i < len; ++i){
+            if (umap.count(s[i])){
+                if (stk.empty() || umap[s[i]] != stk.top()) 
+                    return false;
+                else
+                    stk.pop();
+            }
+            else
+                stk.push(s[i]);
         }
+        return stk.empty();
     }
 };
 // @lc code=end
