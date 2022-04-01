@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=20 lang=cpp
  *
- * [20] 有效的括号
+ * [20] 鏈夋晥鐨勬嫭鍙�
  */
 
 //private include

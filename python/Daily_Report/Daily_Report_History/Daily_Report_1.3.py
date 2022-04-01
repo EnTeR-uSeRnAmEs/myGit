@@ -22,20 +22,20 @@ def isNetOK(testserver = ('www.baidu.com',443)):
 # except:
 #     i = ''
 #     while i != 'Y' or 'N':
-#         print("ÄúµÄpythonÈ±ÉÙseleniumÄ£¿é£¬ÊÇ·ñÒªÏÖÔÚÎªÄú°²×°£¿")
-#         i = input("Y: Çë°ïÎÒ°²×°selenium\nN: ÎÒÒª×Ô¼º°²×°\n")
+#         print("æ‚¨çš„pythonç¼ºå°‘seleniumæ¨¡å—ï¼Œæ˜¯å¦è¦ç°åœ¨ä¸ºæ‚¨å®‰è£…ï¼Ÿ")
+#         i = input("Y: è¯·å¸®æˆ‘å®‰è£…selenium\nN: æˆ‘è¦è‡ªå·±å®‰è£…\n")
 #         if i == 'Y':
-#             print("ÕıÔÚÎªÄú°²×°seleniumÄ£¿é...\n")
+#             print("æ­£åœ¨ä¸ºæ‚¨å®‰è£…seleniumæ¨¡å—...\n")
 #             try:
 #                 os.system(f'pip install selenium')
 #                 time.sleep(10)
 #                 from selenium import webdriver
 #             except:
-#                 print("³öÏÖÎ´Öª´íÎó£¬Î´ÄÜ³É¹¦°²×°seleniumÄ£¿é£¬ÇëÄúÔÚpython.exeÖĞÊ¹ÓÃ'pip install selenium'ÃüÁîÊÖ¶¯ÎªÆä°²×°seleniumÄ£¿éºóÖØĞÂÔËĞĞ´Ë³ÌĞò\n")
+#                 print("å‡ºç°æœªçŸ¥é”™è¯¯ï¼Œæœªèƒ½æˆåŠŸå®‰è£…seleniumæ¨¡å—ï¼Œè¯·æ‚¨åœ¨python.exeä¸­ä½¿ç”¨'pip install selenium'å‘½ä»¤æ‰‹åŠ¨ä¸ºå…¶å®‰è£…seleniumæ¨¡å—åé‡æ–°è¿è¡Œæ­¤ç¨‹åº\n")
 #                 time.sleep(20)
 #                 exit()
 #         elif i == 'N':
-#             print("ÇëÄúÔÚpython.exeÖĞÊ¹ÓÃ'pip install selenium'ÃüÁîÊÖ¶¯ÎªÆä°²×°seleniumÄ£¿éºóÖØĞÂÔËĞĞ´Ë³ÌĞò\n")
+#             print("è¯·æ‚¨åœ¨python.exeä¸­ä½¿ç”¨'pip install selenium'å‘½ä»¤æ‰‹åŠ¨ä¸ºå…¶å®‰è£…seleniumæ¨¡å—åé‡æ–°è¿è¡Œæ­¤ç¨‹åº\n")
 #             time.sleep(20)
 #             exit()
 
@@ -50,40 +50,40 @@ def Search_ID():
             # print(ID,Password)
     except:
         with open("test.txt","w") as key:
-            idtmp=input('ÇëÊäÈëID£º')
-            pwtmp=input('ÇëÊäÈëÃÜÂë£º')
+            idtmp=input('è¯·è¾“å…¥IDï¼š')
+            pwtmp=input('è¯·è¾“å…¥å¯†ç ï¼š')
             key.write("ID="+idtmp+"\nPassword="+pwtmp)
         Search_ID()
 
 
 def login():
-    print("ÕıÔÚ´ò¿ªChromeä¯ÀÀÆ÷...\n")   
+    print("æ­£åœ¨æ‰“å¼€Chromeæµè§ˆå™¨...\n")   
     global driver
     try:
         # option=webdriver.ChromeOptions()
         # option.add_argument('headless')
         # driver = webdriver.Chrome(chrome_options=option)
         driver = webdriver.Chrome()
-        print("ÒÑ³É¹¦´ò¿ªChromeä¯ÀÀÆ÷\n")
+        print("å·²æˆåŠŸæ‰“å¼€Chromeæµè§ˆå™¨\n")
     except:
-        print("Î´ÄÜ´ò¿ªChromeä¯ÀÀÆ÷£¬Çë¼ì²éµ±Ç°ÎÄ¼ş¼ĞÊÇ·ñÓĞchromedriver.exe\n")
+        print("æœªèƒ½æ‰“å¼€Chromeæµè§ˆå™¨ï¼Œè¯·æ£€æŸ¥å½“å‰æ–‡ä»¶å¤¹æ˜¯å¦æœ‰chromedriver.exe\n")
         time.sleep(20)
         exit()
-    print("ÕıÔÚÌø×ª½¡¿µÖ®Â·ÍøÒ³...\n")
+    print("æ­£åœ¨è·³è½¬å¥åº·ä¹‹è·¯ç½‘é¡µ...\n")
     driver.get('https://selfreport.shu.edu.cn')
     time.sleep(0.5)
-    print("ÕıÔÚÌîĞ´ÕËºÅÃÜÂë...\n")
+    print("æ­£åœ¨å¡«å†™è´¦å·å¯†ç ...\n")
     driver.find_element_by_xpath('//*[@id="username"]').send_keys(ID)   
     driver.find_element_by_xpath('//*[@id="password"]').send_keys(Password) 
     time.sleep(0.5)
     driver.find_element_by_xpath('//*[@id="submit"]').click()
-    print("µÇÂ½³É¹¦£¡\n")
+    print("ç™»é™†æˆåŠŸï¼\n")
     time.sleep(0.5)
     driver.find_element_by_xpath('//*[@id="lbReportHistory"]').click()
 
 def Search_Unreported():
     Unreported_Flag = 0
-    print("ÕıÔÚ¼ìË÷Î´Ìî±¨ÏîÄ¿...\n")
+    print("æ­£åœ¨æ£€ç´¢æœªå¡«æŠ¥é¡¹ç›®...\n")
     for i in range (1,32):    
         try:
             time.sleep(0.2)
@@ -98,9 +98,9 @@ def Search_Unreported():
                     right_index = j
                     state_str = temp_str[left_index+1 : right_index]
                     # print(state_str)
-                    if state_str == 'Î´Ìî±¨£¬Çëµã»÷´Ë´¦²¹±¨':
+                    if state_str == 'æœªå¡«æŠ¥ï¼Œè¯·ç‚¹å‡»æ­¤å¤„è¡¥æŠ¥':
                         Unreported_Flag = 1
-                        print("ÒÑ¶¨Î»µ½Î´Ìî±¨ÏîÄ¿£¬ÕıÔÚ½øĞĞÌî±¨...\n")
+                        print("å·²å®šä½åˆ°æœªå¡«æŠ¥é¡¹ç›®ï¼Œæ­£åœ¨è¿›è¡Œå¡«æŠ¥...\n")
                         try:
                             driver.find_element_by_xpath('//*[@id="Panel1_DataList1"]/ul/li[1]').click()   
                         except:
@@ -121,9 +121,9 @@ def Search_Unreported():
                                     YorN = driver.find_element_by_xpath(temp_xpath)
                                     temp_str = YorN.text
                                     #print(temp_str)
-                                    if temp_str == 'È·¶¨':
+                                    if temp_str == 'ç¡®å®š':
                                         driver.find_element_by_xpath(temp_xpath).click()
-                                        #print("µã»÷ÁË1ºÅÈ·¶¨£¡")
+                                        #print("ç‚¹å‡»äº†1å·ç¡®å®šï¼")
                                         break
                                 except:
                                     pass
@@ -132,7 +132,7 @@ def Search_Unreported():
             pass
         
     if Unreported_Flag == 0:
-        print("ÄúÃ»ÓĞÎ´Ìî±¨µÄ¼ÇÂ¼£¡\n")
+        print("æ‚¨æ²¡æœ‰æœªå¡«æŠ¥çš„è®°å½•ï¼\n")
 
 #main:
 flag = 1
@@ -141,11 +141,11 @@ while True:
         Search_ID()
         login()
         Search_Unreported()
-        print('ÄúÒÑÍê³ÉÌî±¨£¡\n')
+        print('æ‚¨å·²å®Œæˆå¡«æŠ¥ï¼\n')
         time.sleep(5)
         driver.quit()
         break
     else:
         if flag:
-            print('ÍøÂçÁ¬½ÓÊ§°Ü£¬Çë²é¿´ÄúµÄÍøÂçÁ¬½Ó¡£\n')
+            print('ç½‘ç»œè¿æ¥å¤±è´¥ï¼Œè¯·æŸ¥çœ‹æ‚¨çš„ç½‘ç»œè¿æ¥ã€‚\n')
             flag = 0
