@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: GBK -*-
 from selenium import webdriver
 # from selenium import webdriver
 import time,socket
@@ -27,20 +25,20 @@ def isNetOK(testserver = ('www.baidu.com',443)):
 # except:
 #     i = ''
 #     while i != 'Y' or 'N':
-#         print("ÄúµÄpythonÈ±ÉÙseleniumÄ£¿é£¬ÊÇ·ñÒªÏÖÔÚÎªÄú°²×°£¿")
-#         i = input("Y: Çë°ïÎÒ°²×°selenium\nN: ÎÒÒª×Ô¼º°²×°\n")
+#         print("æ‚¨çš„pythonç¼ºå°‘seleniumæ¨¡å—ï¼Œæ˜¯å¦è¦ç°åœ¨ä¸ºæ‚¨å®‰è£…ï¼Ÿ")
+#         i = input("Y: è¯·å¸®æˆ‘å®‰è£…selenium\nN: æˆ‘è¦è‡ªå·±å®‰è£…\n")
 #         if i == 'Y':
-#             print("ÕıÔÚÎªÄú°²×°seleniumÄ£¿é...\n")
+#             print("æ­£åœ¨ä¸ºæ‚¨å®‰è£…seleniumæ¨¡å—...\n")
 #             try:
 #                 os.system(f'pip install selenium')
 #                 time.sleep(10)
 #                 from selenium import webdriver
 #             except:
-#                 print("³öÏÖÎ´Öª´íÎó£¬Î´ÄÜ³É¹¦°²×°seleniumÄ£¿é£¬ÇëÄúÔÚpython.exeÖĞÊ¹ÓÃ'pip install selenium'ÃüÁîÊÖ¶¯ÎªÆä°²×°seleniumÄ£¿éºóÖØĞÂÔËĞĞ´Ë³ÌĞò\n")
+#                 print("å‡ºç°æœªçŸ¥é”™è¯¯ï¼Œæœªèƒ½æˆåŠŸå®‰è£…seleniumæ¨¡å—ï¼Œè¯·æ‚¨åœ¨python.exeä¸­ä½¿ç”¨'pip install selenium'å‘½ä»¤æ‰‹åŠ¨ä¸ºå…¶å®‰è£…seleniumæ¨¡å—åé‡æ–°è¿è¡Œæ­¤ç¨‹åº\n")
 #                 time.sleep(20)
 #                 exit()
 #         elif i == 'N':
-#             print("ÇëÄúÔÚpython.exeÖĞÊ¹ÓÃ'pip install selenium'ÃüÁîÊÖ¶¯ÎªÆä°²×°seleniumÄ£¿éºóÖØĞÂÔËĞĞ´Ë³ÌĞò\n")
+#             print("è¯·æ‚¨åœ¨python.exeä¸­ä½¿ç”¨'pip install selenium'å‘½ä»¤æ‰‹åŠ¨ä¸ºå…¶å®‰è£…seleniumæ¨¡å—åé‡æ–°è¿è¡Œæ­¤ç¨‹åº\n")
 #             time.sleep(20)
 #             exit()
 
@@ -54,44 +52,44 @@ def Search_ID():
             Email = file[2][6:]
     except:
         with open("message.txt","w") as key:
-            idtmp = input('ÇëÊäÈëID£º')
-            pwtmp = input('ÇëÊäÈëÃÜÂë£º')
-            Email = input('ÇëÊäÈëÄúµÄÓÊÏäºÅ£º')
+            idtmp = input('è¯·è¾“å…¥IDï¼š')
+            pwtmp = input('è¯·è¾“å…¥å¯†ç ï¼š')
+            Email = input('è¯·è¾“å…¥æ‚¨çš„é‚®ç®±å·ï¼š')
             key.write("ID=" + idtmp + "\nPassword=" + pwtmp + '\nE-mail=' + Email)
         Search_ID()
 
 
 def login():
-    print("ÕıÔÚ´ò¿ªChromeä¯ÀÀÆ÷...\n")   
+    print("æ­£åœ¨æ‰“å¼€Chromeæµè§ˆå™¨...\n")   
     global driver
     try:
         # option=webdriver.ChromeOptions()
         # option.add_argument('headless')
         # driver = webdriver.Chrome(chrome_options=option)
         driver = webdriver.Chrome()
-        print("ÒÑ³É¹¦´ò¿ªChromeä¯ÀÀÆ÷\n")
+        print("å·²æˆåŠŸæ‰“å¼€Chromeæµè§ˆå™¨\n")
     except:
-        print("Î´ÄÜ´ò¿ªChromeä¯ÀÀÆ÷£¬Çë¼ì²éµ±Ç°ÎÄ¼ş¼ĞÊÇ·ñÓĞchromedriver.exe\n")
+        print("æœªèƒ½æ‰“å¼€Chromeæµè§ˆå™¨ï¼Œè¯·æ£€æŸ¥å½“å‰æ–‡ä»¶å¤¹æ˜¯å¦æœ‰chromedriver.exe\n")
         time.sleep(20)
         exit()
-    print("ÕıÔÚÌø×ª½¡¿µÖ®Â·ÍøÒ³...\n")
+    print("æ­£åœ¨è·³è½¬å¥åº·ä¹‹è·¯ç½‘é¡µ...\n")
     driver.get('https://selfreport.shu.edu.cn')
     time.sleep(0.1)
-    print("ÕıÔÚÌîĞ´ÕËºÅÃÜÂë...\n")
+    print("æ­£åœ¨å¡«å†™è´¦å·å¯†ç ...\n")
     driver.find_element_by_xpath('//*[@id="username"]').send_keys(ID)   
     driver.find_element_by_xpath('//*[@id="password"]').send_keys(Password) 
     time.sleep(0.1)
     try:
-        driver.find_element_by_xpath('//button[text() = "µÇÂ¼"]').click()
+        driver.find_element_by_xpath('//button[text() = "ç™»å½•"]').click()
     except:
         pass
-    print("µÇÂ½³É¹¦£¡\n")
+    print("ç™»é™†æˆåŠŸï¼\n")
     time.sleep(0.1)
     driver.find_element_by_xpath('//*[@id="lnkReportHistory"]').click()
 
 def Search_Unreported():
     Unreported_Flag = 0
-    print("ÕıÔÚ¼ìË÷Î´Ìî±¨ÏîÄ¿...\n")
+    print("æ­£åœ¨æ£€ç´¢æœªå¡«æŠ¥é¡¹ç›®...\n")
     for t in range (1,30):
         i = 30 - t
         try:
@@ -104,46 +102,46 @@ def Search_Unreported():
                 elif temp_str[j] == ')':
                     right_index = j
                     state_str = temp_str[left_index+1 : right_index]
-                    if state_str == 'Î´Ìî±¨£¬Çëµã»÷´Ë´¦²¹±¨':
+                    if state_str == 'æœªå¡«æŠ¥ï¼Œè¯·ç‚¹å‡»æ­¤å¤„è¡¥æŠ¥':
                         Unreported_Flag = 1
                         answer = ""
-                        print("ÒÑ¶¨Î»µ½Î´Ìî±¨ÏîÄ¿£¬ÕıÔÚ½øĞĞÌî±¨...\n")
+                        print("å·²å®šä½åˆ°æœªå¡«æŠ¥é¡¹ç›®ï¼Œæ­£åœ¨è¿›è¡Œå¡«æŠ¥...\n")
                         try:
                             driver.find_element_by_xpath('//*[@id="Panel1_DataList1"]/ul/li[' + str(i) + ']').click()   
-                            # driver.find_element_by_xpath('//*[text() = "ÎÒ³ĞÅµ£¬ÒÔÏÂ±¨ËÍÄÚÈİÕæÊµÓĞĞ§²¢¿ÉÓÃÓÚÑ§Ğ£¹ÜÀíĞèÒª£¡"]').click()
+                            # driver.find_element_by_xpath('//*[text() = "æˆ‘æ‰¿è¯ºï¼Œä»¥ä¸‹æŠ¥é€å†…å®¹çœŸå®æœ‰æ•ˆå¹¶å¯ç”¨äºå­¦æ ¡ç®¡ç†éœ€è¦ï¼"]').click()
                         except:
                             pass
                         try:
-                            driver.find_element_by_xpath('//a[text() = "´ğ°¸ÌáÊ¾µã»÷ÕâÀï"]').click()
+                            driver.find_element_by_xpath('//a[text() = "ç­”æ¡ˆæç¤ºç‚¹å‡»è¿™é‡Œ"]').click()
                             time.sleep(1)
-                            answer = driver.find_element_by_xpath('//td/div[contains(text(), "²Î¿¼´ğ°¸")]').text
+                            answer = driver.find_element_by_xpath('//td/div[contains(text(), "å‚è€ƒç­”æ¡ˆ")]').text
                             tmp = ""
                             for k in answer:
                                 if (k >= "a" and k <= "z") or (k >= "A" and k <= "Z"):
                                     tmp += k
-                            driver.find_element_by_xpath('//*[text() = "È·¶¨"]').click()
+                            driver.find_element_by_xpath('//*[text() = "ç¡®å®š"]').click()
                             for k in tmp:
                                 driver.find_element_by_xpath('//*[contains(text(), "' + str(k) + '.")]').click()
                         except:
                             # send_message()
                             pass
-                        choice1 = "ÔÚÉÏº££¨½ø¹ıĞ£ÄÚ£©"
-                        # choice1 = "ÔÚÉÏº££¨Î´½ø¹ıĞ£ÄÚ£©"
-                        # choice1 = "²»ÔÚÉÏº£"
-                        choice2 = "×¡Ğ£"
-                        # choice2 = "²»×¡Ğ£"
-                        choice3 = "²»ÊÇ¼ÒÍ¥µØÖ·"
-                        # choice3 = "¼ÒÍ¥µØÖ·"
-                        choice4 = "Ìá½»"
+                        choice1 = "åœ¨ä¸Šæµ·ï¼ˆè¿›è¿‡æ ¡å†…ï¼‰"
+                        # choice1 = "åœ¨ä¸Šæµ·ï¼ˆæœªè¿›è¿‡æ ¡å†…ï¼‰"
+                        # choice1 = "ä¸åœ¨ä¸Šæµ·"
+                        choice2 = "ä½æ ¡"
+                        # choice2 = "ä¸ä½æ ¡"
+                        choice3 = "ä¸æ˜¯å®¶åº­åœ°å€"
+                        # choice3 = "å®¶åº­åœ°å€"
+                        choice4 = "æäº¤"
                         try:
                             driver_elements = driver.find_elements('class name', 'f-field-fileupload-fileinput')
                             try:
-                                driver_elements[0].send_keys('C:\\Users\\24798\\Desktop\\Daily_Report\\½¡¿µÂë.png')
+                                driver_elements[0].send_keys('C:\\Users\\24798\\Desktop\\Daily_Report\\å¥åº·ç .png')
                                 time.sleep(5)
                             except:
                                 pass
                             try:
-                                driver_elements[1].send_keys('C:\\Users\\24798\\Desktop\\Daily_Report\\ĞĞ³ÌÂë.png')
+                                driver_elements[1].send_keys('C:\\Users\\24798\\Desktop\\Daily_Report\\è¡Œç¨‹ç .png')
                                 time.sleep(5)
                             except:
                                 pass
@@ -151,7 +149,7 @@ def Search_Unreported():
                             pass
                         # driver.find_element_by_xpath('//*[@id="p1_ChengNuo-inputEl"]').click()
                         try:
-                            driver.find_element_by_xpath('//*[text() = "ÎÒ³ĞÅµ£¬ÒÔÏÂ±¨ËÍÄÚÈİÕæÊµÓĞĞ§²¢¿ÉÓÃÓÚÑ§Ğ£¹ÜÀíĞèÒª£¡"]').click()
+                            driver.find_element_by_xpath('//*[text() = "æˆ‘æ‰¿è¯ºï¼Œä»¥ä¸‹æŠ¥é€å†…å®¹çœŸå®æœ‰æ•ˆå¹¶å¯ç”¨äºå­¦æ ¡ç®¡ç†éœ€è¦ï¼"]').click()
                         except:
                             pass
                         time.sleep(0.2)
@@ -159,7 +157,7 @@ def Search_Unreported():
                             driver.find_element_by_xpath('//*[text() = "' + choice1 + '"]').click()
                             time.sleep(1)
                         except:
-                            # driver.find_element_by_xpath('//*[text() = "ÔÚÉÏº££¨Ğ£ÄÚ£©"]').click()
+                            # driver.find_element_by_xpath('//*[text() = "åœ¨ä¸Šæµ·ï¼ˆæ ¡å†…ï¼‰"]').click()
                             pass
                         try:
                             driver.find_element_by_xpath('//*[text() = "' + choice2 + '"]').click()
@@ -176,32 +174,32 @@ def Search_Unreported():
                             time.sleep(0.2)
                         except:
                             pass
-                        driver.find_element_by_xpath('//*[text() = "È·¶¨"]').click()
+                        driver.find_element_by_xpath('//*[text() = "ç¡®å®š"]').click()
                         time.sleep(0.2)
-                        driver.find_element_by_xpath('//a[text() = "È·¶¨"]').click()
+                        driver.find_element_by_xpath('//a[text() = "ç¡®å®š"]').click()
                         time.sleep(0.2)
                         driver.find_element_by_xpath('//*[@id="lnkReportHistory"]').click()
                         time.sleep(0.2)
         except:
-            driver.find_element_by_xpath('//*[text() = "Ê×Ò³"]').click()
+            driver.find_element_by_xpath('//*[text() = "é¦–é¡µ"]').click()
             driver.find_element_by_xpath('//*[@id="lnkReportHistory"]').click()
             #send_message()
     if Unreported_Flag == 0:
-        print("ÄúÃ»ÓĞÎ´Ìî±¨µÄ¼ÇÂ¼£¡\n")
+        print("æ‚¨æ²¡æœ‰æœªå¡«æŠ¥çš„è®°å½•ï¼\n")
 
 def send_message():
     host_server = 'smtp.163.com'
     sender = 'python_test2003@163.com' 
     pwd = 'CSTMAZZIUUOPHHIZ'
     receiver = [Email]
-    mail_title = 'Ã¿ÈÕÒ»±¨ÌáĞÑ' 
-    mail_content = "½ñÈÕÃ¿ÈÕÒ»±¨Ê§°Ü£¬ÇëÊÖ¶¯Ìá½»£¡" #ÓÊ¼şÕıÎÄÄÚÈİ
+    mail_title = 'æ¯æ—¥ä¸€æŠ¥æé†’' 
+    mail_content = "ä»Šæ—¥æ¯æ—¥ä¸€æŠ¥å¤±è´¥ï¼Œè¯·æ‰‹åŠ¨æäº¤ï¼" #é‚®ä»¶æ­£æ–‡å†…å®¹
     msg = MIMEMultipart()
     msg["Subject"] = Header(mail_title,'utf-8')
     msg["From"] = sender
     msg['To'] = ";".join(receiver)
     msg.attach(MIMEText(mail_content,'plain','utf-8'))
-    smtp = SMTP_SSL(host_server) # sslµÇÂ¼
+    smtp = SMTP_SSL(host_server) # sslç™»å½•
     smtp.login(sender,pwd)
     smtp.sendmail(sender,receiver,msg.as_string())
     smtp.quit()
@@ -213,12 +211,12 @@ while True:
         Search_ID()
         login()
         Search_Unreported()
-        print('ÄúÒÑÍê³ÉÌî±¨£¡\n')
+        print('æ‚¨å·²å®Œæˆå¡«æŠ¥ï¼\n')
         time.sleep(5)
         driver.quit()
         break
     else:
         if flag:
-            print('ÍøÂçÁ¬½ÓÊ§°Ü£¬Çë²é¿´ÄúµÄÍøÂçÁ¬½Ó¡£\n')
+            print('ç½‘ç»œè¿æ¥å¤±è´¥ï¼Œè¯·æŸ¥çœ‹æ‚¨çš„ç½‘ç»œè¿æ¥ã€‚\n')
             # send_message()
             flag = 0

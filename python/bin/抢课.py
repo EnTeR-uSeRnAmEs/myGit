@@ -5,12 +5,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from time import sleep
 
-account = input('ÇëÊäÈëÑ§ºÅ£º')
-password = input('ÇëÊäÈëÃÜÂë£º')
+account = input('è¯·è¾“å…¥å­¦å·ï¼š')
+password = input('è¯·è¾“å…¥å¯†ç ï¼š')
 classes = []
 
 while True:
-    tmp = input('ÇëÊäÈë£¨¿Î³ÌºÅ ½ÌÊ¦ºÅ£©Óë»Ø³µ£¬ÒÔ0×÷ÎªÊäÈëÍê±Ï£º').split()
+    tmp = input('è¯·è¾“å…¥ï¼ˆè¯¾ç¨‹å· æ•™å¸ˆå·ï¼‰ä¸å›è½¦ï¼Œä»¥0ä½œä¸ºè¾“å…¥å®Œæ¯•ï¼š').split()
     if tmp == ['0']:
         break
     else:
@@ -24,11 +24,11 @@ driver = webdriver.Chrome(options=chrome_options)
 sleep(0.5)
 driver.get('http://xk.autoisp.shu.edu.cn/')
 sleep(0.5)
-input("ÇëÊäÈë»Ø³µÒÔ¿ªÊ¼Ñ¡¿Î...")
+input("è¯·è¾“å…¥å›è½¦ä»¥å¼€å§‹é€‰è¯¾...")
 for i in classes:
     driver.find_element(By.XPATH, '//*[@id = "username"]').send_keys(account)
     driver.find_element(By.XPATH, '//*[@id = "password"]').send_keys(password)
-    driver.find_element(By.XPATH, '//button[text() = "µÇÂ¼"]').click()
+    driver.find_element(By.XPATH, '//button[text() = "ç™»å½•"]').click()
     driver.find_element(By.XPATH, '//*[@name = "rowterm"]').click()
     driver.find_element(By.XPATH, '//button[@type = "submit"]').click()
     driver.find_element(By.XPATH, '//*[@id = "CourseSelectionStudentFuzzyQuery"]').click()
@@ -37,7 +37,7 @@ for i in classes:
     driver.find_element(By.XPATH, '//button[@id="QueryAction"]').click()
     driver.find_element(By.XPATH, '//*[@name = "checkclass"]').click()
     driver.find_element(By.XPATH, '//button[@id = "CourseCheckAction"]').click()
-    driver.find_element(By.XPATH, '//span[text() = "¹Ø±Õ"]').click()
+    driver.find_element(By.XPATH, '//span[text() = "å…³é—­"]').click()
 input()
 
 driver.quit()

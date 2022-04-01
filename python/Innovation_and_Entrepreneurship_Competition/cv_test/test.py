@@ -1,25 +1,22 @@
-#!/usr/bin/python
-#-*- coding: GBK -*-
-
 import cv2
  
-vc = cv2.VideoCapture(r'E://µçÓ°//remake//1_1080.mp4')  # ¶ÁÈëÊÓÆµÎÄ¼ş£¬ÃüÃûcv
-n = 1  # ¼ÆÊı
+vc = cv2.VideoCapture(r'E://out.mp4')  # è¯»å…¥è§†é¢‘æ–‡ä»¶ï¼Œå‘½åcv
+n = 1  # è®¡æ•°
  
-if vc.isOpened():  # ÅĞ¶ÏÊÇ·ñÕı³£´ò¿ª
+if vc.isOpened():  # åˆ¤æ–­æ˜¯å¦æ­£å¸¸æ‰“å¼€
     rval, frame = vc.read()
 else:
     rval = False
  
-timeF = 1  # ÊÓÆµÖ¡¼ÆÊı¼ä¸ôÆµÂÊ
+timeF = 1  # è§†é¢‘å¸§è®¡æ•°é—´éš”é¢‘ç‡
  
 i = 0
-while rval:  # Ñ­»·¶ÁÈ¡ÊÓÆµÖ¡
+while rval:  # å¾ªç¯è¯»å–è§†é¢‘å¸§
     rval, frame = vc.read()
-    if (n % timeF == 0):  # Ã¿¸ôtimeFÖ¡½øĞĞ´æ´¢²Ù×÷
+    if (n % timeF == 0):  # æ¯éš”timeFå¸§è¿›è¡Œå­˜å‚¨æ“ä½œ
         i += 1
         print(i)
-        # cv2.imwrite(r'F://test//360-30//{}.jpg'.format(i), frame)  # ´æ´¢ÎªÍ¼Ïñ
+        # cv2.imwrite(r'F://test//360-30//{}.jpg'.format(i), frame)  # å­˜å‚¨ä¸ºå›¾åƒ
         cv2.imshow("frame", frame)
     n = n + 1
     if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -28,4 +25,4 @@ while rval:  # Ñ­»·¶ÁÈ¡ÊÓÆµÖ¡
         cv2.imwrite(r'C://Users//24798//Desktop//test//{}.jpg'.format(i), frame)
 vc.release()
 cv2.destroyAllWindows()
-# Ô­ÎÄÁ´½Ó£ºhttps://blog.csdn.net/qq_36535414/article/details/109143968
+# åŸæ–‡é“¾æ¥ï¼šhttps://blog.csdn.net/qq_36535414/article/details/109143968

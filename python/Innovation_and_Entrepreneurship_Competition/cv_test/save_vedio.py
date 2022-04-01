@@ -1,21 +1,18 @@
-#!/usr/bin/python
-#-*- coding: GBK -*-
-
 import numpy as np
 import cv2
 
 cap = cv2.VideoCapture("c://Users//24798//Desktop//test_360.mp4")
 
-#fourccÊÇÒ»ÖÖ±àÂë¸ñÊ½£¬ÎÒÃÇ±£´æÊÓÆµÊ±ÒªÖ¸¶¨ÎÄ¼şÃû¡¢±àÂë¸ñÊ½¡¢FPS¡¢Êä³ö³ß´ç¡¢ÑÕÉ«Ä£Ê½
+#fourccæ˜¯ä¸€ç§ç¼–ç æ ¼å¼ï¼Œæˆ‘ä»¬ä¿å­˜è§†é¢‘æ—¶è¦æŒ‡å®šæ–‡ä»¶åã€ç¼–ç æ ¼å¼ã€FPSã€è¾“å‡ºå°ºå¯¸ã€é¢œè‰²æ¨¡å¼
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))   #Êä³öÎÄ¼şÃû¡¢FourCC¡¢Ö¡ÂÊ¡¢´óĞ¡
+out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))   #è¾“å‡ºæ–‡ä»¶åã€FourCCã€å¸§ç‡ã€å¤§å°
 while(cap.isOpened()):
     ret, frame = cap.read()
     if ret==True:
-        #cv2.flip(img,flag)  ·­×ªÍ¼Ïñ£¨1Ë®Æ½·­×ª¡¢0´¹Ö±·­×ª¡¢-1Ë®Æ½´¹Ö±·­×ª£©
+        #cv2.flip(img,flag)  ç¿»è½¬å›¾åƒï¼ˆ1æ°´å¹³ç¿»è½¬ã€0å‚ç›´ç¿»è½¬ã€-1æ°´å¹³å‚ç›´ç¿»è½¬ï¼‰
         frame = cv2.flip(frame,1)
 
-        # Ğ´ÈëÊÓÆµÖ¡
+        # å†™å…¥è§†é¢‘å¸§
         out.write(frame)
 
         # cv2.imshow('frame',frame)

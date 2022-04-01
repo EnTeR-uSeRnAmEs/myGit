@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: GBK -*-
 def cd2curdir():
     try:
         import os
@@ -29,7 +27,7 @@ def schtask_com():
     #creating the RegistrationInfo object.
     regInfo = taskDefinition.RegistrationInfo
     regInfo.Description = "Start Daily_Report_2.2 at a certain time"
-    regInfo.Author = "ÃÔ÷ë"
+    regInfo.Author = "administrater"
     
     #********************************************************
     # Set the principal for the task

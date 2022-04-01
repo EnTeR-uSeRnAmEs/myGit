@@ -6,23 +6,23 @@ def pwd_input():
         try:  
             newChar = msvcrt.getch().decode(encoding="utf-8")  
         except:  
-            return input("ÄãºÜ¿ÉÄÜ²»ÊÇÔÚcmdÃüÁîĞĞÏÂÔËĞĞ£¬ÃÜÂëÊäÈë½«²»ÄÜÒş²Ø:")  
-        if newChar in '\r\n': # Èç¹ûÊÇ»»ĞĞ£¬ÔòÊäÈë½áÊø               
+            return input("ä½ å¾ˆå¯èƒ½ä¸æ˜¯åœ¨cmdå‘½ä»¤è¡Œä¸‹è¿è¡Œï¼Œå¯†ç è¾“å…¥å°†ä¸èƒ½éšè—:")  
+        if newChar in '\r\n': # å¦‚æœæ˜¯æ¢è¡Œï¼Œåˆ™è¾“å…¥ç»“æŸ               
              break   
-        elif newChar == '\b': # Èç¹ûÊÇÍË¸ñ£¬ÔòÉ¾³ıÃÜÂëÄ©Î²Ò»Î»²¢ÇÒÉ¾³ıÒ»¸öĞÇºÅ   
+        elif newChar == '\b': # å¦‚æœæ˜¯é€€æ ¼ï¼Œåˆ™åˆ é™¤å¯†ç æœ«å°¾ä¸€ä½å¹¶ä¸”åˆ é™¤ä¸€ä¸ªæ˜Ÿå·   
              if chars:    
                  del chars[-1]   
-                 msvcrt.putch('\b'.encode(encoding='utf-8')) # ¹â±ê»ØÍËÒ»¸ñ  
-                 msvcrt.putch( ' '.encode(encoding='utf-8')) # Êä³öÒ»¸ö¿Õ¸ñ¸²¸ÇÔ­À´µÄĞÇºÅ  
-                 msvcrt.putch('\b'.encode(encoding='utf-8')) # ¹â±ê»ØÍËÒ»¸ñ×¼±¸½ÓÊÜĞÂµÄÊäÈë                   
+                 msvcrt.putch('\b'.encode(encoding='utf-8')) # å…‰æ ‡å›é€€ä¸€æ ¼  
+                 msvcrt.putch( ' '.encode(encoding='utf-8')) # è¾“å‡ºä¸€ä¸ªç©ºæ ¼è¦†ç›–åŸæ¥çš„æ˜Ÿå·  
+                 msvcrt.putch('\b'.encode(encoding='utf-8')) # å…‰æ ‡å›é€€ä¸€æ ¼å‡†å¤‡æ¥å—æ–°çš„è¾“å…¥                   
         else:  
             chars.append(newChar)  
-            msvcrt.putch('*'.encode(encoding='utf-8')) # ÏÔÊ¾ÎªĞÇºÅ  
+            msvcrt.putch('*'.encode(encoding='utf-8')) # æ˜¾ç¤ºä¸ºæ˜Ÿå·  
     return (''.join(chars) )  
   
 print("Please input your password:",end='')
 # print("Please input your password:")
-# print('²âÊÔ£º', end='')
+# print('æµ‹è¯•ï¼š', end='')
 pwd = pwd_input()  
 print("\nyour password is:{0}".format(pwd))
 input()
