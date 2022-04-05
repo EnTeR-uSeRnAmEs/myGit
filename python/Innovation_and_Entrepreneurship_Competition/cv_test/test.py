@@ -1,6 +1,6 @@
 import cv2
  
-vc = cv2.VideoCapture(r'E://out.mp4')  # 读入视频文件，命名cv
+vc = cv2.VideoCapture(r'')  # 读入视频文件，命名cv
 n = 1  # 计数
  
 if vc.isOpened():  # 判断是否正常打开
