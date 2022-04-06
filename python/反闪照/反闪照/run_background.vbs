@@ -1,0 +1,1 @@
+createobject("wscript.shell").run "anti_shining.py",vbhide
