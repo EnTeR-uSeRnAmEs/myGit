@@ -16,6 +16,7 @@
         "-std=c++23",
         "-Wall",
         "-Wextra",
+        "-fexec-charset=GBK",
         "-g",
         "${file}",
         "-o",
@@ -46,7 +47,10 @@
         "-NoProfile",
         "-File",
         "C:\\mingw64\\bin\\pause-console.ps1",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        {
+          "quoting": "weak",
+          "value": "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        }
       ],
       "command": "START",
       "dependsOn": "gcc single file build",

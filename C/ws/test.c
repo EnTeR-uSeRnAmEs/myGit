@@ -1,44 +1,45 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include <string.h>
+
+int cmp(const void *p1, const void *p2)
+{
+    char *a = (char *)p1;
+    char *b = (char *)p2;
+    return strcmp(a, b) > 0 ? 1 : -1;
+}
 
 int main()
 {
-    char in[100], out[100];
-    char str[1000], c;
-    int count = 0, i = 0;
-    FILE *fp1 = fopen("filein.txt", "r");
-    FILE *fp2 = fopen("fileout.txt", "w");
-    scanf("%s", in);
-    scanf("%s", out);
-
-    while (!feof(fp1))
+    char s[1000][100] = {"\0"}, tmp_str[100] = {"\0"};
+    int i = -1, count = 1;
+    FILE *fp = fopen("article.txt", "r");
+    fscanf(fp, "%s", s[++i]);
+    strlwr(s[i]);
+    int len = strlen(s[i]);
+    if (s[i][len - 1] == ',' || s[i][len - 1] == '.' || s[i][len - 1] == ';')
+        s[i][len - 1] = '\0';
+    while (fscanf(fp, " %s", s[++i]) != EOF)
     {
-        int start, flag = 0;
-        c = fgetc(fp1);
-        for (i = 0; i < strlen(in); ++i)
+        strlwr(s[i]);
+        int len = strlen(s[i]);
+        if (s[i][len - 1] == ',' || s[i][len - 1] == '.' || s[i][len - 1] == ';')
+            s[i][len - 1] = '\0';
+    }
+    len = i;
+    qsort(s, len, sizeof(s[0]), cmp);
+    strcpy(tmp_str, s[0]);
+    for (i = 1; i <= len + 1; ++i)
+    {
+        if (strcmp(tmp_str, s[i]) == 0)
+            ++count;
+        else
         {
-            if (c == toupper(in[i]) || c == tolower(in[i]))
-            {
-                if (flag == 0) {start = count;}
-                flag = 1;
-            }
-            else {break;}
-        }
-        str[count++] = c;
-        if (flag == 1 && i == strlen(in))
-        {
-            for (i = 0; i < strlen(out); ++i) {str[start + i] = out[i];}
-            flag = 0;
-            count += i - 1;
+            printf("%s %d\n", tmp_str, count);
+            strcpy(tmp_str, s[i]);
+            count = 1;
         }
     }
-    str[--count] = '\0';
-    // printf("%s\n", str);
-    fputs(str, fp2);
-    fclose(fp1);
-    fclose(fp2);
-    // system("pause");
+    system("pause");
     return 0;
 }
