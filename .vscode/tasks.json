@@ -14,6 +14,9 @@
     {
       "args": [
         "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-fexec-charset=GBK",
         "-g",
         "${file}",
         "-o",
@@ -62,6 +65,29 @@
       },
       "problemMatcher": [],
       "type": "shell"
+    },
+    {
+      "args": [
+        "-ExecutionPolicy",
+        "ByPass",
+        "-NoProfile",
+        "-File",
+        "C:\\mingw64\\bin\\check-ascii.ps1",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "command": "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "dependsOn": "gcc single file build",
+      "label": "check ascii",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "never",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "type": "process"
     }
   ],
   "version": "2.0.0"
