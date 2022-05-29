@@ -2,9 +2,9 @@
   "configurations": [
     {
       "compilerPath": "C:\\mingw64\\bin\\g++.exe",
-      "cppStandard": "c++23",
+      "cppStandard": "c++20",
       "includePath": [
-        "${{workspaceFolder}}/**"
+        "${workspaceFolder}/**"
       ],
       "intelliSenseMode": "windows-gcc-x64",
       "name": "Win32"

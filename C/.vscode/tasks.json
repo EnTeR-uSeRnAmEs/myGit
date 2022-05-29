@@ -13,18 +13,20 @@
   "tasks": [
     {
       "args": [
-        "-std=c++23",
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "-Wall",
+        "-Wextra",
+        "-std=c++23"
       ],
       "command": "C:\\mingw64\\bin\\g++.exe",
       "group": {
         "isDefault": true,
         "kind": "build"
       },
-      "label": "gcc single file build",
+      "label": "single file build",
       "presentation": {
         "clear": true,
         "echo": false,
@@ -34,7 +36,7 @@
         "showReuseMessage": false
       },
       "problemMatcher": "$gcc",
-      "type": "process"
+      "type": "shell"
     },
     {
       "args": [
@@ -43,14 +45,11 @@
         "ByPass",
         "-NoProfile",
         "-File",
-        "C:\\mingw64\\bin\\pause-console.ps1",
-        {
-          "quoting": "weak",
-          "value": "${fileDirname}\\${fileBasenameNoExtension}.exe"
-        }
+        "C:\\Users\\24798\\AppData\\Roaming\\vscch\\pause-console.ps1",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
       "command": "START",
-      "dependsOn": "gcc single file build",
+      "dependsOn": "single file build",
       "label": "run and pause",
       "presentation": {
         "clear": true,
