@@ -1,0 +1,1 @@
+helloworld > output.txt < input.txt

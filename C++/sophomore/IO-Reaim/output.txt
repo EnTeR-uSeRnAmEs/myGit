@@ -1,0 +1,5 @@
+What's your name?
+How old are you?
+Name:kali
+Age:20
+请按任意键继续. . . 
