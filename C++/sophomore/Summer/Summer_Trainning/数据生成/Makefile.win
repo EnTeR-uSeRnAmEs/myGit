@@ -1,0 +1,52 @@
+# Project: 数据生成
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = SelectTest.o score.o 数据生成.o SelectSort.o QuickSort.o InsertionSort.o InsertionSort_Binary.o InsertionSort_Shell.o BubbleSort.o
+LINKOBJ  = SelectTest.o score.o 数据生成.o SelectSort.o QuickSort.o InsertionSort.o InsertionSort_Binary.o InsertionSort_Shell.o BubbleSort.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 数据生成与选择排序.exe
+CXXFLAGS = $(CXXINCS) -std=gnu++11 -Wl,--stack=268435456
+CFLAGS   = $(INCS) -std=gnu++11 -Wl,--stack=268435456
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+SelectTest.o: SelectTest.cpp
+	$(CPP) -c SelectTest.cpp -o SelectTest.o $(CXXFLAGS)
+
+score.o: score.cpp
+	$(CPP) -c score.cpp -o score.o $(CXXFLAGS)
+
+数据生成.o: 数据生成.cpp
+	$(CPP) -c 数据生成.cpp -o 数据生成.o $(CXXFLAGS)
+
+SelectSort.o: SelectSort.cpp
+	$(CPP) -c SelectSort.cpp -o SelectSort.o $(CXXFLAGS)
+
+QuickSort.o: QuickSort.cpp
+	$(CPP) -c QuickSort.cpp -o QuickSort.o $(CXXFLAGS)
+
+InsertionSort.o: InsertionSort.cpp
+	$(CPP) -c InsertionSort.cpp -o InsertionSort.o $(CXXFLAGS)
+
+InsertionSort_Binary.o: InsertionSort_Binary.cpp
+	$(CPP) -c InsertionSort_Binary.cpp -o InsertionSort_Binary.o $(CXXFLAGS)
+
+InsertionSort_Shell.o: InsertionSort_Shell.cpp
+	$(CPP) -c InsertionSort_Shell.cpp -o InsertionSort_Shell.o $(CXXFLAGS)
+
+BubbleSort.o: BubbleSort.cpp
+	$(CPP) -c BubbleSort.cpp -o BubbleSort.o $(CXXFLAGS)

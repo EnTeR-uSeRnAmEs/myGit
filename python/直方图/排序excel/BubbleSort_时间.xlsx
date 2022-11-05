@@ -1,0 +1,60 @@
+数据类型:	int(顺序)	——	时间
+数据数量	冒泡排序(sorted)	冒泡排序(Cocktail_sorted)	
+1024	0.001	0.000	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+2048	0.003	0.000	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+4096	0.009	0.000	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+8192	0.039	0.000	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+16384	0.154	0.000	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+32768	0.620	0.000	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+65536	2.578	0.001	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+
+数据类型:	int(逆序)	——	时间
+数据数量	冒泡排序(sorted)	冒泡排序(Cocktail_sorted)	
+1024	0.001	0.002	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+2048	0.006	0.007	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+4096	0.023	0.036	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+8192	0.092	0.132	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+16384	0.349	0.534	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+32768	1.428	2.261	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+65536	5.765	9.105	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+
+数据类型:	int(均匀分布)	——	时间
+数据数量	冒泡排序(sorted)	冒泡排序(Cocktail_sorted)	
+1024	0.001	0.001	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+2048	0.004	0.005	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+4096	0.016	0.018	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+8192	0.068	0.083	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+16384	0.290	0.370	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+32768	1.493	1.736	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+65536	7.619	7.147	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+
+数据类型:	int(正态分布)	——	时间
+数据数量	冒泡排序(sorted)	冒泡排序(Cocktail_sorted)	
+1024	0.001	0.001	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+2048	0.004	0.004	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+4096	0.016	0.019	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+8192	0.066	0.084	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+16384	0.283	0.357	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+32768	1.491	1.721	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+65536	7.725	7.213	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+
+数据类型:	int(结构体)	——	时间
+数据数量	冒泡排序(sorted)	冒泡排序(Cocktail_sorted)	
+1024	0.003	0.003	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+2048	0.010	0.010	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+4096	0.037	0.040	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+8192	0.153	0.163	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+16384	0.663	0.758	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+32768	3.194	3.274	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+65536	14.472	13.359	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+
+数据类型:	int(重复)	——	时间
+数据数量	冒泡排序(sorted)	冒泡排序(Cocktail_sorted)	
+1024	0.001	0.001	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+2048	0.003	0.002	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+4096	0.014	0.014	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+8192	0.044	0.028	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+16384	0.186	0.153	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+32768	0.689	0.219	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+65536	4.189	5.671	冒泡排序(sorted):	正确	冒泡排序(Cocktail_sorted):	正确	
+

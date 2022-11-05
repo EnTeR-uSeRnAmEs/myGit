@@ -1,5 +1,3 @@
-#!usr/bin/python
-#-*- coding: GBK -*-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -19,7 +17,8 @@ while True:
 chrome_options = Options()
 # chrome_options.add_argument('--headless')
 chrome_options.add_argument('--incognito')
-chrome_options.add_experimental_option("excludeSwitches",['enable-automation','enable-logging'])
+chrome_options.add_experimental_option(
+    "excludeSwitches", ['enable-automation', 'enable-logging'])
 driver = webdriver.Chrome(options=chrome_options)
 sleep(0.5)
 driver.get('http://xk.autoisp.shu.edu.cn/')
@@ -31,12 +30,14 @@ for i in classes:
     driver.find_element(By.XPATH, '//button[text() = "登录"]').click()
     driver.find_element(By.XPATH, '//*[@name = "rowterm"]').click()
     driver.find_element(By.XPATH, '//button[@type = "submit"]').click()
-    driver.find_element(By.XPATH, '//*[@id = "CourseSelectionStudentFuzzyQuery"]').click()
+    driver.find_element(
+        By.XPATH, '//*[@id = "CourseSelectionStudentFuzzyQuery"]').click()
     driver.find_element(By.XPATH, '//*[@name = "CID"]').send_keys(i[0])
     driver.find_element(By.XPATH, '//*[@name = "TeachNo"]').send_keys(i[1])
     driver.find_element(By.XPATH, '//button[@id="QueryAction"]').click()
     driver.find_element(By.XPATH, '//*[@name = "checkclass"]').click()
-    driver.find_element(By.XPATH, '//button[@id = "CourseCheckAction"]').click()
+    driver.find_element(
+        By.XPATH, '//button[@id = "CourseCheckAction"]').click()
     driver.find_element(By.XPATH, '//span[text() = "关闭"]').click()
 input()
 
