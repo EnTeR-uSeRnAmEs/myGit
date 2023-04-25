@@ -12,9 +12,15 @@
 /**
  * 程序执行的入口点。
  */
-int main() {
+int main()
+{
     // 在标准输出中打印 "Hello, world!"
-    std::cout << "Hello, world!" << std::endl;
+    int input;
+    std::cin >> input;
+    if (input == 1)
+        std::cout << "True!" << std::endl;
+    else
+        std::cout << "Hello, world!" << std::endl;
 }
 
 // 此文件编译运行将输出 "Hello, world!"。

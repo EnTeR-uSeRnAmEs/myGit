@@ -5,7 +5,7 @@
       "args": [],
       "cwd": "${fileDirname}",
       "environment": [],
-      "externalConsole": true,
+      "externalConsole": false,
       "internalConsoleOptions": "neverOpen",
       "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
       "name": "gcc single file debug",
